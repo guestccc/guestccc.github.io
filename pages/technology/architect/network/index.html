@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>计算机网络 | JSChen</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="dns-prefetch" href="//blog.jschen.cc">
+  <link rel="icon" href="/assets/img/LOGO.png" type="image/png">
+  <script type="text/javascript" src="/assets/sitemap/baidu.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
+  <meta name="keywords" content="ccc,jschen,陈程城,vue,前端,web前端,前端基础,bind,apply,call,prototype,tcp/ip,TCP/IP,webpack,nuxt,event-loop,作用域链,执行上下文,js,jschen,javaScript,new,class,es6,new 实质,node,babel,ci/cd,CI/CD,vue源码,前端进阶,">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.f48fada0.css" as="style"><link rel="preload" href="/assets/js/app.c2508881.js" as="script"><link rel="preload" href="/assets/js/2.cf1aef41.js" as="script"><link rel="preload" href="/assets/js/48.3745fc99.js" as="script"><link rel="prefetch" href="/assets/js/10.56128c99.js"><link rel="prefetch" href="/assets/js/11.c8b3f272.js"><link rel="prefetch" href="/assets/js/12.4b04cebc.js"><link rel="prefetch" href="/assets/js/13.e5192576.js"><link rel="prefetch" href="/assets/js/14.82cde3ed.js"><link rel="prefetch" href="/assets/js/15.6e3e8fd4.js"><link rel="prefetch" href="/assets/js/16.edd9a16c.js"><link rel="prefetch" href="/assets/js/17.fea4da74.js"><link rel="prefetch" href="/assets/js/18.c27a81b3.js"><link rel="prefetch" href="/assets/js/19.4d0e4e25.js"><link rel="prefetch" href="/assets/js/20.d3d58085.js"><link rel="prefetch" href="/assets/js/21.a494675f.js"><link rel="prefetch" href="/assets/js/22.a8057eda.js"><link rel="prefetch" href="/assets/js/23.14b6a967.js"><link rel="prefetch" href="/assets/js/24.d09b1656.js"><link rel="prefetch" href="/assets/js/25.58dfcb2d.js"><link rel="prefetch" href="/assets/js/26.6c359997.js"><link rel="prefetch" href="/assets/js/27.36c46610.js"><link rel="prefetch" href="/assets/js/28.b4a4095e.js"><link rel="prefetch" href="/assets/js/29.e7164acd.js"><link rel="prefetch" href="/assets/js/3.95b1062e.js"><link rel="prefetch" href="/assets/js/30.425b18bf.js"><link rel="prefetch" href="/assets/js/31.bfb69108.js"><link rel="prefetch" href="/assets/js/32.cb4ee37d.js"><link rel="prefetch" href="/assets/js/33.a36f6ded.js"><link rel="prefetch" href="/assets/js/34.8e75078d.js"><link rel="prefetch" href="/assets/js/35.4b368081.js"><link rel="prefetch" href="/assets/js/36.1b0e1f3b.js"><link rel="prefetch" href="/assets/js/37.30df97f4.js"><link rel="prefetch" href="/assets/js/38.58842bbf.js"><link rel="prefetch" href="/assets/js/39.1841efd2.js"><link rel="prefetch" href="/assets/js/4.c3f9504b.js"><link rel="prefetch" href="/assets/js/40.144e05fd.js"><link rel="prefetch" href="/assets/js/41.dfbe55dd.js"><link rel="prefetch" href="/assets/js/42.fcc3627f.js"><link rel="prefetch" href="/assets/js/43.a0b63a40.js"><link rel="prefetch" href="/assets/js/44.0fbecdce.js"><link rel="prefetch" href="/assets/js/45.7dc4360a.js"><link rel="prefetch" href="/assets/js/46.112e4475.js"><link rel="prefetch" href="/assets/js/47.fda8fe3f.js"><link rel="prefetch" href="/assets/js/49.4df3b896.js"><link rel="prefetch" href="/assets/js/5.abc82d58.js"><link rel="prefetch" href="/assets/js/50.08ccde73.js"><link rel="prefetch" href="/assets/js/51.e75b1bc7.js"><link rel="prefetch" href="/assets/js/52.676ed932.js"><link rel="prefetch" href="/assets/js/53.fff552bc.js"><link rel="prefetch" href="/assets/js/54.4981adaf.js"><link rel="prefetch" href="/assets/js/55.6f270dd6.js"><link rel="prefetch" href="/assets/js/56.ed45f328.js"><link rel="prefetch" href="/assets/js/57.f01b8ee4.js"><link rel="prefetch" href="/assets/js/58.034f4cf3.js"><link rel="prefetch" href="/assets/js/59.f567a814.js"><link rel="prefetch" href="/assets/js/6.6c659510.js"><link rel="prefetch" href="/assets/js/60.f27e8593.js"><link rel="prefetch" href="/assets/js/61.0e18e3e1.js"><link rel="prefetch" href="/assets/js/7.b7348597.js"><link rel="prefetch" href="/assets/js/8.8f481eb9.js"><link rel="prefetch" href="/assets/js/9.88b2a566.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f48fada0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/LOGO.png" alt="JSChen" class="logo"> <span class="site-name can-hide">JSChen</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术提升" class="dropdown-title"><span class="title">技术提升</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端进阶之路
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/architect/base/" class="nav-link">
+  javaScript基础
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/network/" class="nav-link router-link-exact-active router-link-active">
+  计算机网络
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/vue/" class="nav-link">
+  Vue.js
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/engineering/" class="nav-link">
+  前端工程化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          运维小兴趣
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/ops/linux/" class="nav-link">
+  linux
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/nginx/" class="nav-link">
+  nginx
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/docker/" class="nav-link">
+  docker
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><span class="title">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/interview/included/" class="nav-link">
+  面试题收录
+</a></li><li class="dropdown-item"><!----> <a href="/pages/interview/plan/4-8/" class="nav-link">
+  面试准备
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/essay/" class="nav-link">
+  随笔
+</a></li><li class="dropdown-item"><!----> <a href="/pages/saying/" class="nav-link">
+  名言小课堂
+</a></li><li class="dropdown-item"><!----> <a href="/pages/about/" class="nav-link">
+  关于
+</a></li><li class="dropdown-item"><!----> <a href="/pages/pdf/" class="nav-link">
+  收藏书籍
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogroll/" class="nav-link">
+  友情链接
+</a></li><li class="dropdown-item"><!----> <a href="/pages/story/" class="nav-link">
+  故事
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/guestccc/guestccc.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术提升" class="dropdown-title"><span class="title">技术提升</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端进阶之路
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/architect/base/" class="nav-link">
+  javaScript基础
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/network/" class="nav-link router-link-exact-active router-link-active">
+  计算机网络
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/vue/" class="nav-link">
+  Vue.js
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/engineering/" class="nav-link">
+  前端工程化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          运维小兴趣
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/ops/linux/" class="nav-link">
+  linux
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/nginx/" class="nav-link">
+  nginx
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/docker/" class="nav-link">
+  docker
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><span class="title">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/interview/included/" class="nav-link">
+  面试题收录
+</a></li><li class="dropdown-item"><!----> <a href="/pages/interview/plan/4-8/" class="nav-link">
+  面试准备
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/essay/" class="nav-link">
+  随笔
+</a></li><li class="dropdown-item"><!----> <a href="/pages/saying/" class="nav-link">
+  名言小课堂
+</a></li><li class="dropdown-item"><!----> <a href="/pages/about/" class="nav-link">
+  关于
+</a></li><li class="dropdown-item"><!----> <a href="/pages/pdf/" class="nav-link">
+  收藏书籍
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogroll/" class="nav-link">
+  友情链接
+</a></li><li class="dropdown-item"><!----> <a href="/pages/story/" class="nav-link">
+  故事
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/guestccc/guestccc.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>网络协议</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>网络请求</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/technology/architect/network/" class="active sidebar-link">计算机网络</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/technology/architect/network/#cookie" class="sidebar-link">cookie</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/technology/architect/network/#一、一级域名相同-拿-cookie" class="sidebar-link">一、一级域名相同 -- 拿 cookie</a></li></ul></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/network/#iframe" class="sidebar-link">iframe</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/technology/architect/network/#二、-一级域名相同-内嵌-iframe-拿-dom" class="sidebar-link">二、 一级域名相同 -- 内嵌 iframe -- 拿 DOM</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/network/#三、-给iframe设置hash" class="sidebar-link">三、 给iframe设置hash</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/network/#四、postmessage" class="sidebar-link">四、postMessage</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/network/#五、localstorage" class="sidebar-link">五、LocalStorage</a></li></ul></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/network/#ajax" class="sidebar-link">Ajax</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/technology/architect/network/#jsonp" class="sidebar-link">jsonp</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/network/#websocket" class="sidebar-link">webSocket</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/network/#cors" class="sidebar-link">cors</a></li></ul></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/network/#相关链接" class="sidebar-link">相关链接</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>网络安全</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>模块加载</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="计算机网络"><a href="#计算机网络" class="header-anchor">#</a> 计算机网络</h1> <h1 id="同源策略，跨域规避方案"><a href="#同源策略，跨域规避方案" class="header-anchor">#</a> 同源策略，跨域规避方案</h1> <h2 id="cookie"><a href="#cookie" class="header-anchor">#</a> cookie</h2> <h3 id="一、一级域名相同-拿-cookie"><a href="#一、一级域名相同-拿-cookie" class="header-anchor">#</a> 一、一级域名相同 -- 拿 <code>cookie</code></h3> <p><code>A</code> 网页 <code>https://xiaoai.dankal.cn</code> ， <code>B</code> 网页 <code>https://xiaoai-admin.dankal.cn</code> ， <code>C</code> 网页 <code>https://dankal.cn</code> ， <code>AB</code> 网页都是二级域名 ， <code>C</code> 网页是顶级域名</p> <p>3 个分别窗口访问 <code>A</code> 、 <code>B</code> 、 <code>C</code> ， 或者 互相嵌入 <code>iframe</code></p> <p>通过设置 <code>cookie</code> 规避跨域</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 在任意页面</span>
+document<span class="token punctuation">.</span>cookie <span class="token operator">=</span> <span class="token string">&quot;test=i'm test cookie;domain=dankal.cn&quot;</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 在任意页面</span>
+document<span class="token punctuation">.</span>cookie
+<span class="token comment">// test=i'm test cookie</span>
+</code></pre></div><h2 id="iframe"><a href="#iframe" class="header-anchor">#</a> iframe</h2> <h3 id="二、-一级域名相同-内嵌-iframe-拿-dom"><a href="#二、-一级域名相同-内嵌-iframe-拿-dom" class="header-anchor">#</a> 二、 一级域名相同 -- 内嵌 <code>iframe</code> -- 拿 <code>DOM</code></h3> <p><code>A</code> 网页 <code>https://xiaoai.dankal.cn</code> ， <code>iframe</code> 页面 <code>https://xiaoai-admin.dankal.cn</code> ，</p> <p>设置 <code>A</code> 页面和 <code>iframe</code> 页面的 <code>domain</code> 为顶级域名 <code>dankal.cn</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//  `A` 页面和 `iframe` 页面</span>
+document<span class="token punctuation">.</span>domain <span class="token operator">=</span> <span class="token string">'dankal.cn'</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// `A` 页面</span>
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'iframeId'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>contentWindow<span class="token punctuation">.</span>document
+<span class="token comment">// # document</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// iframe 页面</span>
+window<span class="token punctuation">.</span>parent<span class="token punctuation">.</span>document
+<span class="token comment">// # document</span>
+</code></pre></div><h3 id="三、-给iframe设置hash"><a href="#三、-给iframe设置hash" class="header-anchor">#</a> 三、 给iframe设置hash</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// iframe</span>
+window<span class="token punctuation">.</span><span class="token function-variable function">onhashchange</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>hash<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 页面</span>
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'xxx'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>src <span class="token operator">+=</span> <span class="token string">'#name=ccc'</span>
+</code></pre></div><h3 id="四、postmessage"><a href="#四、postmessage" class="header-anchor">#</a> 四、postMessage</h3> <p>窗口之间通讯，主窗口和iframe之间通讯</p> <h3 id="五、localstorage"><a href="#五、localstorage" class="header-anchor">#</a> 五、LocalStorage</h3> <p>通过 postMessage 实现</p> <h2 id="ajax"><a href="#ajax" class="header-anchor">#</a> Ajax</h2> <h3 id="jsonp"><a href="#jsonp" class="header-anchor">#</a> jsonp</h3> <h3 id="websocket"><a href="#websocket" class="header-anchor">#</a> webSocket</h3> <h3 id="cors"><a href="#cors" class="header-anchor">#</a> cors</h3> <h4 id="非简单请求"><a href="#非简单请求" class="header-anchor">#</a> 非简单请求</h4> <p>凡是不同时满足下面面两个条件，就属于非简单请求。</p> <div class="language-h extra-class"><pre class="language-text"><code>1) 请求方法是以下三种方法之一：
+
+HEAD
+GET
+POST
+
+2）HTTP的头信息不超出以下几种字段：
+
+Accept
+Accept-Language
+Content-Language
+Last-Event-ID
+Content-Type：只限于三个值application/x-www-form-urlencoded、multipart/form-data、text/plain
+</code></pre></div><p>node 设置 cors</p> <div class="language-js extra-class"><pre class="language-js"><code>app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span>res<span class="token punctuation">,</span>next</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">header</span><span class="token punctuation">(</span><span class="token string">'Access-Control-Allow-Origin'</span><span class="token punctuation">,</span><span class="token string">'*'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">header</span><span class="token punctuation">(</span><span class="token string">'Access-Control-Allow-Methods'</span><span class="token punctuation">,</span><span class="token string">'PUT,POST,DELETE,GET,OPTION'</span><span class="token punctuation">)</span>
+  res<span class="token punctuation">.</span><span class="token function">header</span><span class="token punctuation">(</span><span class="token string">'Access-Control-Allow-Headers'</span><span class="token punctuation">,</span><span class="token string">'Origin,X-Requested-With,Content-Type,Access-Control-Allow-Credentials,Accept'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">header</span><span class="token punctuation">(</span><span class="token string">'Access-Control-Allow-Credentials'</span><span class="token punctuation">,</span><span class="token string">'true'</span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>method <span class="token operator">==</span> <span class="token string">&quot;OPTIONS&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="相关链接"><a href="#相关链接" class="header-anchor">#</a> 相关链接</h2></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2020/5/30 下午2:06:25</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/pages/technology/architect/network/status.html" class="prev">
+        http 状态码
+      </a></span> <span class="next"><a href="/pages/technology/architect/network/" class="router-link-exact-active router-link-active">
+        计算机网络
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.c2508881.js" defer></script><script src="/assets/js/2.cf1aef41.js" defer></script><script src="/assets/js/48.3745fc99.js" defer></script>
+  </body>
+</html>

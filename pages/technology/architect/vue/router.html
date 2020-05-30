@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>路由 | JSChen</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="dns-prefetch" href="//blog.jschen.cc">
+  <link rel="icon" href="/assets/img/LOGO.png" type="image/png">
+  <script type="text/javascript" src="/assets/sitemap/baidu.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
+  <meta name="keywords" content="ccc,jschen,陈程城,vue,前端,web前端,前端基础,bind,apply,call,prototype,tcp/ip,TCP/IP,webpack,nuxt,event-loop,作用域链,执行上下文,js,jschen,javaScript,new,class,es6,new 实质,node,babel,ci/cd,CI/CD,vue源码,前端进阶,">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.f48fada0.css" as="style"><link rel="preload" href="/assets/js/app.c2508881.js" as="script"><link rel="preload" href="/assets/js/2.cf1aef41.js" as="script"><link rel="preload" href="/assets/js/55.6f270dd6.js" as="script"><link rel="prefetch" href="/assets/js/10.56128c99.js"><link rel="prefetch" href="/assets/js/11.c8b3f272.js"><link rel="prefetch" href="/assets/js/12.4b04cebc.js"><link rel="prefetch" href="/assets/js/13.e5192576.js"><link rel="prefetch" href="/assets/js/14.82cde3ed.js"><link rel="prefetch" href="/assets/js/15.6e3e8fd4.js"><link rel="prefetch" href="/assets/js/16.edd9a16c.js"><link rel="prefetch" href="/assets/js/17.fea4da74.js"><link rel="prefetch" href="/assets/js/18.c27a81b3.js"><link rel="prefetch" href="/assets/js/19.4d0e4e25.js"><link rel="prefetch" href="/assets/js/20.d3d58085.js"><link rel="prefetch" href="/assets/js/21.a494675f.js"><link rel="prefetch" href="/assets/js/22.a8057eda.js"><link rel="prefetch" href="/assets/js/23.14b6a967.js"><link rel="prefetch" href="/assets/js/24.d09b1656.js"><link rel="prefetch" href="/assets/js/25.58dfcb2d.js"><link rel="prefetch" href="/assets/js/26.6c359997.js"><link rel="prefetch" href="/assets/js/27.36c46610.js"><link rel="prefetch" href="/assets/js/28.b4a4095e.js"><link rel="prefetch" href="/assets/js/29.e7164acd.js"><link rel="prefetch" href="/assets/js/3.95b1062e.js"><link rel="prefetch" href="/assets/js/30.425b18bf.js"><link rel="prefetch" href="/assets/js/31.bfb69108.js"><link rel="prefetch" href="/assets/js/32.cb4ee37d.js"><link rel="prefetch" href="/assets/js/33.a36f6ded.js"><link rel="prefetch" href="/assets/js/34.8e75078d.js"><link rel="prefetch" href="/assets/js/35.4b368081.js"><link rel="prefetch" href="/assets/js/36.1b0e1f3b.js"><link rel="prefetch" href="/assets/js/37.30df97f4.js"><link rel="prefetch" href="/assets/js/38.58842bbf.js"><link rel="prefetch" href="/assets/js/39.1841efd2.js"><link rel="prefetch" href="/assets/js/4.c3f9504b.js"><link rel="prefetch" href="/assets/js/40.144e05fd.js"><link rel="prefetch" href="/assets/js/41.dfbe55dd.js"><link rel="prefetch" href="/assets/js/42.fcc3627f.js"><link rel="prefetch" href="/assets/js/43.a0b63a40.js"><link rel="prefetch" href="/assets/js/44.0fbecdce.js"><link rel="prefetch" href="/assets/js/45.7dc4360a.js"><link rel="prefetch" href="/assets/js/46.112e4475.js"><link rel="prefetch" href="/assets/js/47.fda8fe3f.js"><link rel="prefetch" href="/assets/js/48.3745fc99.js"><link rel="prefetch" href="/assets/js/49.4df3b896.js"><link rel="prefetch" href="/assets/js/5.abc82d58.js"><link rel="prefetch" href="/assets/js/50.08ccde73.js"><link rel="prefetch" href="/assets/js/51.e75b1bc7.js"><link rel="prefetch" href="/assets/js/52.676ed932.js"><link rel="prefetch" href="/assets/js/53.fff552bc.js"><link rel="prefetch" href="/assets/js/54.4981adaf.js"><link rel="prefetch" href="/assets/js/56.ed45f328.js"><link rel="prefetch" href="/assets/js/57.f01b8ee4.js"><link rel="prefetch" href="/assets/js/58.034f4cf3.js"><link rel="prefetch" href="/assets/js/59.f567a814.js"><link rel="prefetch" href="/assets/js/6.6c659510.js"><link rel="prefetch" href="/assets/js/60.f27e8593.js"><link rel="prefetch" href="/assets/js/61.0e18e3e1.js"><link rel="prefetch" href="/assets/js/7.b7348597.js"><link rel="prefetch" href="/assets/js/8.8f481eb9.js"><link rel="prefetch" href="/assets/js/9.88b2a566.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f48fada0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/LOGO.png" alt="JSChen" class="logo"> <span class="site-name can-hide">JSChen</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术提升" class="dropdown-title"><span class="title">技术提升</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端进阶之路
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/architect/base/" class="nav-link">
+  javaScript基础
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/network/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/vue/" class="nav-link router-link-active">
+  Vue.js
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/engineering/" class="nav-link">
+  前端工程化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          运维小兴趣
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/ops/linux/" class="nav-link">
+  linux
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/nginx/" class="nav-link">
+  nginx
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/docker/" class="nav-link">
+  docker
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><span class="title">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/interview/included/" class="nav-link">
+  面试题收录
+</a></li><li class="dropdown-item"><!----> <a href="/pages/interview/plan/4-8/" class="nav-link">
+  面试准备
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/essay/" class="nav-link">
+  随笔
+</a></li><li class="dropdown-item"><!----> <a href="/pages/saying/" class="nav-link">
+  名言小课堂
+</a></li><li class="dropdown-item"><!----> <a href="/pages/about/" class="nav-link">
+  关于
+</a></li><li class="dropdown-item"><!----> <a href="/pages/pdf/" class="nav-link">
+  收藏书籍
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogroll/" class="nav-link">
+  友情链接
+</a></li><li class="dropdown-item"><!----> <a href="/pages/story/" class="nav-link">
+  故事
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/guestccc/guestccc.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术提升" class="dropdown-title"><span class="title">技术提升</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端进阶之路
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/architect/base/" class="nav-link">
+  javaScript基础
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/network/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/vue/" class="nav-link router-link-active">
+  Vue.js
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/engineering/" class="nav-link">
+  前端工程化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          运维小兴趣
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/ops/linux/" class="nav-link">
+  linux
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/nginx/" class="nav-link">
+  nginx
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/docker/" class="nav-link">
+  docker
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><span class="title">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/interview/included/" class="nav-link">
+  面试题收录
+</a></li><li class="dropdown-item"><!----> <a href="/pages/interview/plan/4-8/" class="nav-link">
+  面试准备
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/essay/" class="nav-link">
+  随笔
+</a></li><li class="dropdown-item"><!----> <a href="/pages/saying/" class="nav-link">
+  名言小课堂
+</a></li><li class="dropdown-item"><!----> <a href="/pages/about/" class="nav-link">
+  关于
+</a></li><li class="dropdown-item"><!----> <a href="/pages/pdf/" class="nav-link">
+  收藏书籍
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogroll/" class="nav-link">
+  友情链接
+</a></li><li class="dropdown-item"><!----> <a href="/pages/story/" class="nav-link">
+  故事
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/guestccc/guestccc.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Vue.js</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/technology/architect/vue/" class="sidebar-link">深入响应式</a></li><li><a href="/pages/technology/architect/vue/router.html" class="active sidebar-link">路由</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/technology/architect/vue/router.html#hash" class="sidebar-link">hash</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/vue/router.html#history" class="sidebar-link">history</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/vue/router.html#abstract" class="sidebar-link">abstract</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Nuxt.js</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue源码解读</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>组件架构</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="路由"><a href="#路由" class="header-anchor">#</a> 路由</h1> <p>三种</p> <ul><li>hash</li> <li>history</li> <li>abstract</li></ul> <h2 id="hash"><a href="#hash" class="header-anchor">#</a> hash</h2> <ul><li><p>hash 其实就是锚点，跳转到锚点指定的位置而不会真的跳转页面</p></li> <li><p>通过监听 hashchange 做页面更换处理</p></li></ul> <h2 id="history"><a href="#history" class="header-anchor">#</a> history</h2> <ul><li><p>利用 html5 history 维护一个页面栈</p></li> <li><p>路由跳转实际上并不是真的跳转页面，需要在服务端配置重定向</p></li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>width=device-width, initial-scale=1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>jschen<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/cc1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>ccc1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/cc2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>ccc2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/cc3<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>ccc3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">class</span> <span class="token class-name">Router</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>router <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">push</span><span class="token punctuation">(</span><span class="token parameter">url<span class="token punctuation">,</span>query</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      history<span class="token punctuation">.</span><span class="token function">pushState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>query<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token string">'title_cc1'</span><span class="token punctuation">,</span>url<span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">[</span>url<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">[</span>url<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">replace</span><span class="token punctuation">(</span><span class="token parameter">url<span class="token punctuation">,</span>query</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      history<span class="token punctuation">.</span><span class="token function">replaceState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>query<span class="token punctuation">,</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token string">'title_cc1'</span><span class="token punctuation">,</span>url<span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">[</span>url<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">[</span>url<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">init</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>val</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token operator">...</span>val<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">setConfig</span><span class="token punctuation">(</span><span class="token parameter">optionList</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      optionList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">pageOption</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">[</span>pageOption<span class="token punctuation">.</span>router<span class="token punctuation">]</span> <span class="token operator">=</span> pageOption<span class="token punctuation">.</span>cb <span class="token comment">// 这个cb就是用来切换页面的 </span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">let</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  router<span class="token punctuation">.</span><span class="token function">setConfig</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      router<span class="token operator">:</span><span class="token string">'/html.html'</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">cb</span><span class="token operator">:</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'加载主页'</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      router<span class="token operator">:</span><span class="token string">'/cc1'</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">cb</span><span class="token operator">:</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'加载cc1'</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      router<span class="token operator">:</span><span class="token string">'/cc2'</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">cb</span><span class="token operator">:</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'加载cc2'</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      router<span class="token operator">:</span><span class="token string">'/cc3'</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">cb</span><span class="token operator">:</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'加载cc3'</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">)</span>
+  router<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span>location<span class="token punctuation">.</span>pathname<span class="token punctuation">,</span><span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">'我是主页'</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// 这里很重要哈，因为history模式下跳转的页面实际上是不存在的，如果用户在其他路由下刷新页面那么nginx接到的请求页面是找不到的，所以这里需要在nginx配置重定向</span>
+  document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'ul'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span><span class="token string">'e'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">'href'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">'href'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">'asdf'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="abstract"><a href="#abstract" class="header-anchor">#</a> abstract</h2> <p>这个是在 node.js 跑的</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2020/5/30 下午2:06:25</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/pages/technology/architect/vue/" class="prev router-link-active">
+        深入响应式
+      </a></span> <span class="next"><a href="/pages/technology/architect/vue/nuxt.html">
+        SSR
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.c2508881.js" defer></script><script src="/assets/js/2.cf1aef41.js" defer></script><script src="/assets/js/55.6f270dd6.js" defer></script>
+  </body>
+</html>

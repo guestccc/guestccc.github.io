@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>笔试题 | JSChen</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="dns-prefetch" href="//blog.jschen.cc">
+  <link rel="icon" href="/assets/img/LOGO.png" type="image/png">
+  <script type="text/javascript" src="/assets/sitemap/baidu.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
+  <meta name="keywords" content="ccc,jschen,陈程城,vue,前端,web前端,前端基础,bind,apply,call,prototype,tcp/ip,TCP/IP,webpack,nuxt,event-loop,作用域链,执行上下文,js,jschen,javaScript,new,class,es6,new 实质,node,babel,ci/cd,CI/CD,vue源码,前端进阶,">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.f48fada0.css" as="style"><link rel="preload" href="/assets/js/app.c2508881.js" as="script"><link rel="preload" href="/assets/js/2.cf1aef41.js" as="script"><link rel="preload" href="/assets/js/3.95b1062e.js" as="script"><link rel="prefetch" href="/assets/js/10.56128c99.js"><link rel="prefetch" href="/assets/js/11.c8b3f272.js"><link rel="prefetch" href="/assets/js/12.4b04cebc.js"><link rel="prefetch" href="/assets/js/13.e5192576.js"><link rel="prefetch" href="/assets/js/14.82cde3ed.js"><link rel="prefetch" href="/assets/js/15.6e3e8fd4.js"><link rel="prefetch" href="/assets/js/16.edd9a16c.js"><link rel="prefetch" href="/assets/js/17.fea4da74.js"><link rel="prefetch" href="/assets/js/18.c27a81b3.js"><link rel="prefetch" href="/assets/js/19.4d0e4e25.js"><link rel="prefetch" href="/assets/js/20.d3d58085.js"><link rel="prefetch" href="/assets/js/21.a494675f.js"><link rel="prefetch" href="/assets/js/22.a8057eda.js"><link rel="prefetch" href="/assets/js/23.14b6a967.js"><link rel="prefetch" href="/assets/js/24.d09b1656.js"><link rel="prefetch" href="/assets/js/25.58dfcb2d.js"><link rel="prefetch" href="/assets/js/26.6c359997.js"><link rel="prefetch" href="/assets/js/27.36c46610.js"><link rel="prefetch" href="/assets/js/28.b4a4095e.js"><link rel="prefetch" href="/assets/js/29.e7164acd.js"><link rel="prefetch" href="/assets/js/30.425b18bf.js"><link rel="prefetch" href="/assets/js/31.bfb69108.js"><link rel="prefetch" href="/assets/js/32.cb4ee37d.js"><link rel="prefetch" href="/assets/js/33.a36f6ded.js"><link rel="prefetch" href="/assets/js/34.8e75078d.js"><link rel="prefetch" href="/assets/js/35.4b368081.js"><link rel="prefetch" href="/assets/js/36.1b0e1f3b.js"><link rel="prefetch" href="/assets/js/37.30df97f4.js"><link rel="prefetch" href="/assets/js/38.58842bbf.js"><link rel="prefetch" href="/assets/js/39.1841efd2.js"><link rel="prefetch" href="/assets/js/4.c3f9504b.js"><link rel="prefetch" href="/assets/js/40.144e05fd.js"><link rel="prefetch" href="/assets/js/41.dfbe55dd.js"><link rel="prefetch" href="/assets/js/42.fcc3627f.js"><link rel="prefetch" href="/assets/js/43.a0b63a40.js"><link rel="prefetch" href="/assets/js/44.0fbecdce.js"><link rel="prefetch" href="/assets/js/45.7dc4360a.js"><link rel="prefetch" href="/assets/js/46.112e4475.js"><link rel="prefetch" href="/assets/js/47.fda8fe3f.js"><link rel="prefetch" href="/assets/js/48.3745fc99.js"><link rel="prefetch" href="/assets/js/49.4df3b896.js"><link rel="prefetch" href="/assets/js/5.abc82d58.js"><link rel="prefetch" href="/assets/js/50.08ccde73.js"><link rel="prefetch" href="/assets/js/51.e75b1bc7.js"><link rel="prefetch" href="/assets/js/52.676ed932.js"><link rel="prefetch" href="/assets/js/53.fff552bc.js"><link rel="prefetch" href="/assets/js/54.4981adaf.js"><link rel="prefetch" href="/assets/js/55.6f270dd6.js"><link rel="prefetch" href="/assets/js/56.ed45f328.js"><link rel="prefetch" href="/assets/js/57.f01b8ee4.js"><link rel="prefetch" href="/assets/js/58.034f4cf3.js"><link rel="prefetch" href="/assets/js/59.f567a814.js"><link rel="prefetch" href="/assets/js/6.6c659510.js"><link rel="prefetch" href="/assets/js/60.f27e8593.js"><link rel="prefetch" href="/assets/js/61.0e18e3e1.js"><link rel="prefetch" href="/assets/js/7.b7348597.js"><link rel="prefetch" href="/assets/js/8.8f481eb9.js"><link rel="prefetch" href="/assets/js/9.88b2a566.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f48fada0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/LOGO.png" alt="JSChen" class="logo"> <span class="site-name can-hide">JSChen</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术提升" class="dropdown-title"><span class="title">技术提升</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端进阶之路
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/architect/base/" class="nav-link">
+  javaScript基础
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/network/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/vue/" class="nav-link">
+  Vue.js
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/engineering/" class="nav-link">
+  前端工程化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          运维小兴趣
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/ops/linux/" class="nav-link">
+  linux
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/nginx/" class="nav-link">
+  nginx
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/docker/" class="nav-link">
+  docker
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><span class="title">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/interview/included/" class="nav-link">
+  面试题收录
+</a></li><li class="dropdown-item"><!----> <a href="/pages/interview/plan/4-8/" class="nav-link">
+  面试准备
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/essay/" class="nav-link">
+  随笔
+</a></li><li class="dropdown-item"><!----> <a href="/pages/saying/" class="nav-link">
+  名言小课堂
+</a></li><li class="dropdown-item"><!----> <a href="/pages/about/" class="nav-link">
+  关于
+</a></li><li class="dropdown-item"><!----> <a href="/pages/pdf/" class="nav-link">
+  收藏书籍
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogroll/" class="nav-link">
+  友情链接
+</a></li><li class="dropdown-item"><!----> <a href="/pages/story/" class="nav-link">
+  故事
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/guestccc/guestccc.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术提升" class="dropdown-title"><span class="title">技术提升</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端进阶之路
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/architect/base/" class="nav-link">
+  javaScript基础
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/network/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/vue/" class="nav-link">
+  Vue.js
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/engineering/" class="nav-link">
+  前端工程化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          运维小兴趣
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/ops/linux/" class="nav-link">
+  linux
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/nginx/" class="nav-link">
+  nginx
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/docker/" class="nav-link">
+  docker
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><span class="title">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/interview/included/" class="nav-link">
+  面试题收录
+</a></li><li class="dropdown-item"><!----> <a href="/pages/interview/plan/4-8/" class="nav-link">
+  面试准备
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/essay/" class="nav-link">
+  随笔
+</a></li><li class="dropdown-item"><!----> <a href="/pages/saying/" class="nav-link">
+  名言小课堂
+</a></li><li class="dropdown-item"><!----> <a href="/pages/about/" class="nav-link">
+  关于
+</a></li><li class="dropdown-item"><!----> <a href="/pages/pdf/" class="nav-link">
+  收藏书籍
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogroll/" class="nav-link">
+  友情链接
+</a></li><li class="dropdown-item"><!----> <a href="/pages/story/" class="nav-link">
+  故事
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/guestccc/guestccc.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>简历</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/interview/plan/4-8.html" class="sidebar-link">2020 年面试准备</a></li><li><a href="/pages/interview/plan/" class="sidebar-link">plan</a></li><li><a href="/pages/interview/plan/pen.html" class="active sidebar-link">笔试题</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/interview/plan/pen.html#_1-容器包含若干浮动元素时如何清理-包含-浮动" class="sidebar-link">1. 容器包含若干浮动元素时如何清理(包含)浮动</a></li><li class="sidebar-sub-header"><a href="/pages/interview/plan/pen.html#前端性能" class="sidebar-link">前端性能</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/interview/plan/pen.html#connection-keep-alive" class="sidebar-link">Connection: keep-alive</a></li><li class="sidebar-sub-header"><a href="/pages/interview/plan/pen.html#cache-control（控制缓存）" class="sidebar-link">Cache-Control（控制缓存）</a></li><li class="sidebar-sub-header"><a href="/pages/interview/plan/pen.html#expires（缓存校验）" class="sidebar-link">Expires（缓存校验）</a></li><li class="sidebar-sub-header"><a href="/pages/interview/plan/pen.html#last-modified-if-modified-since" class="sidebar-link">Last-Modified / If-Modified-Since</a></li><li class="sidebar-sub-header"><a href="/pages/interview/plan/pen.html#etag-if-none-match-缓存校验" class="sidebar-link">Etag / If-None-Match(缓存校验)</a></li><li class="sidebar-sub-header"><a href="/pages/interview/plan/pen.html#请求流程" class="sidebar-link">请求流程</a></li></ul></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>markdown</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="笔试题"><a href="#笔试题" class="header-anchor">#</a> 笔试题</h1> <h2 id="_1-容器包含若干浮动元素时如何清理-包含-浮动"><a href="#_1-容器包含若干浮动元素时如何清理-包含-浮动" class="header-anchor">#</a> 1. 容器包含若干浮动元素时如何清理(包含)浮动</h2> <ol><li>使用 clear</li></ol> <div class="baba" style="background:red;"><div style="background:yellow;width:100px;height:100px;float:right;"></div> <span>asdfsdf</span></div> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">background</span><span class="token punctuation">:</span>red</span><span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>baba<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> 
+    <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">background</span><span class="token punctuation">:</span>yellow<span class="token punctuation">;</span><span class="token property">width</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span><span class="token property">height</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span><span class="token property">float</span><span class="token punctuation">:</span>right</span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>asdfsdf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.baba:after</span><span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span>block<span class="token punctuation">;</span>
+  <span class="token property">clear</span><span class="token punctuation">:</span>both<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ol start="2"><li>使用 块级格式化上下文</li></ol> <div class="baba2" style="background:red;"><div style="background:yellow;width:100px;height:100px;float:left;"></div> <span>asdfsdf</span></div> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">background</span><span class="token punctuation">:</span>red</span><span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>baba2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> 
+    <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">background</span><span class="token punctuation">:</span>yellow<span class="token punctuation">;</span><span class="token property">width</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span><span class="token property">height</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span><span class="token property">float</span><span class="token punctuation">:</span>left</span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>asdfsdf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.baba2</span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span>flow-root<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="前端性能"><a href="#前端性能" class="header-anchor">#</a> 前端性能</h2> <ul><li><p>网络传输性能</p></li> <li><p>页面渲染性能</p></li> <li><p>JS阻塞性能</p></li></ul> <h3 id="connection-keep-alive"><a href="#connection-keep-alive" class="header-anchor">#</a> Connection: keep-alive</h3> <p>保持连接特性</p> <p>http 1.1 开始才有这种持久连接，tpc 连接(三次握手)可以持久化，不需要每次发起请求都得做一次 tcp 连接</p> <h3 id="cache-control（控制缓存）"><a href="#cache-control（控制缓存）" class="header-anchor">#</a> Cache-Control（控制缓存）</h3> <h3 id="expires（缓存校验）"><a href="#expires（缓存校验）" class="header-anchor">#</a> Expires（缓存校验）</h3> <p>日期，与当前客户端对比，大于当前时间为未过期，下于当前时间为过期</p> <p>来张两年前我看完懵逼的一张图，现在是真的懂了呀</p> <h3 id="last-modified-if-modified-since"><a href="#last-modified-if-modified-since" class="header-anchor">#</a> Last-Modified / If-Modified-Since</h3> <p>第一次请求，看 response headers 的 last-modified ，标示着 该资源最后被修改的时间,接口返回 200</p> <p>第二次请求，看 request headers 的 If-Modified-Since ， 标示着第一次请求获取到的 last-modified 如果该时间后没有被修改，自动返回 304</p> <h3 id="etag-if-none-match-缓存校验"><a href="#etag-if-none-match-缓存校验" class="header-anchor">#</a> Etag / If-None-Match(缓存校验)</h3> <p>第一次请求，看 response headers 的 Etag ，存放着服务器端生成的一个序列值.</p> <p><img src="/assets/img/navigation_timing%E7%9B%91%E6%B5%8B%E6%8C%87%E6%A0%87%E5%9B%BE.png" alt="navigation timing监测指标图"></p> <div class="custom-block tip"><p class="custom-block-title">流程</p> <p>重定向 → 拉取缓存 → DNS查询 → 建立TCP链接 → 发起请求 → 接收响应 → 处理HTML元素 → 元素加载完成</p></div> <h3 id="请求流程"><a href="#请求流程" class="header-anchor">#</a> 请求流程</h3> <p><img src="/assets/img/%E8%AF%B7%E6%B1%82%E6%B5%81%E7%A8%8B.png" alt="请求流程.png"></p> <ol><li><code>from memory cache</code> 和 <code>from disk cache</code></li></ol> <p>资源请求，<code>from memory cache</code>指缓存来自内存， <code>from disk cache</code>指缓存来自硬盘</p> <ol start="2"><li>控制缓存存放位置的 <code>Etag</code></li></ol> <p>如果有 <code>Etag</code> 字段，那么浏览器就会将本次缓存写入硬盘中。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2020/5/30 下午2:06:25</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/pages/interview/plan/" class="prev router-link-active">
+        plan
+      </a></span> <span class="next"><a href="/pages/interview/plan/js-base.html">
+        面试准备
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.c2508881.js" defer></script><script src="/assets/js/2.cf1aef41.js" defer></script><script src="/assets/js/3.95b1062e.js" defer></script>
+  </body>
+</html>

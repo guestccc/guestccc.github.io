@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>从 docker 工作流来了解学习 docker | JSChen</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="dns-prefetch" href="//blog.jschen.cc">
+  <link rel="icon" href="/assets/img/LOGO.png" type="image/png">
+  <script type="text/javascript" src="/assets/sitemap/baidu.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
+  <meta name="keywords" content="ccc,jschen,陈程城,vue,前端,web前端,前端基础,bind,apply,call,prototype,tcp/ip,TCP/IP,webpack,nuxt,event-loop,作用域链,执行上下文,js,jschen,javaScript,new,class,es6,new 实质,node,babel,ci/cd,CI/CD,vue源码,前端进阶,">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.f48fada0.css" as="style"><link rel="preload" href="/assets/js/app.c2508881.js" as="script"><link rel="preload" href="/assets/js/2.cf1aef41.js" as="script"><link rel="preload" href="/assets/js/57.f01b8ee4.js" as="script"><link rel="prefetch" href="/assets/js/10.56128c99.js"><link rel="prefetch" href="/assets/js/11.c8b3f272.js"><link rel="prefetch" href="/assets/js/12.4b04cebc.js"><link rel="prefetch" href="/assets/js/13.e5192576.js"><link rel="prefetch" href="/assets/js/14.82cde3ed.js"><link rel="prefetch" href="/assets/js/15.6e3e8fd4.js"><link rel="prefetch" href="/assets/js/16.edd9a16c.js"><link rel="prefetch" href="/assets/js/17.fea4da74.js"><link rel="prefetch" href="/assets/js/18.c27a81b3.js"><link rel="prefetch" href="/assets/js/19.4d0e4e25.js"><link rel="prefetch" href="/assets/js/20.d3d58085.js"><link rel="prefetch" href="/assets/js/21.a494675f.js"><link rel="prefetch" href="/assets/js/22.a8057eda.js"><link rel="prefetch" href="/assets/js/23.14b6a967.js"><link rel="prefetch" href="/assets/js/24.d09b1656.js"><link rel="prefetch" href="/assets/js/25.58dfcb2d.js"><link rel="prefetch" href="/assets/js/26.6c359997.js"><link rel="prefetch" href="/assets/js/27.36c46610.js"><link rel="prefetch" href="/assets/js/28.b4a4095e.js"><link rel="prefetch" href="/assets/js/29.e7164acd.js"><link rel="prefetch" href="/assets/js/3.95b1062e.js"><link rel="prefetch" href="/assets/js/30.425b18bf.js"><link rel="prefetch" href="/assets/js/31.bfb69108.js"><link rel="prefetch" href="/assets/js/32.cb4ee37d.js"><link rel="prefetch" href="/assets/js/33.a36f6ded.js"><link rel="prefetch" href="/assets/js/34.8e75078d.js"><link rel="prefetch" href="/assets/js/35.4b368081.js"><link rel="prefetch" href="/assets/js/36.1b0e1f3b.js"><link rel="prefetch" href="/assets/js/37.30df97f4.js"><link rel="prefetch" href="/assets/js/38.58842bbf.js"><link rel="prefetch" href="/assets/js/39.1841efd2.js"><link rel="prefetch" href="/assets/js/4.c3f9504b.js"><link rel="prefetch" href="/assets/js/40.144e05fd.js"><link rel="prefetch" href="/assets/js/41.dfbe55dd.js"><link rel="prefetch" href="/assets/js/42.fcc3627f.js"><link rel="prefetch" href="/assets/js/43.a0b63a40.js"><link rel="prefetch" href="/assets/js/44.0fbecdce.js"><link rel="prefetch" href="/assets/js/45.7dc4360a.js"><link rel="prefetch" href="/assets/js/46.112e4475.js"><link rel="prefetch" href="/assets/js/47.fda8fe3f.js"><link rel="prefetch" href="/assets/js/48.3745fc99.js"><link rel="prefetch" href="/assets/js/49.4df3b896.js"><link rel="prefetch" href="/assets/js/5.abc82d58.js"><link rel="prefetch" href="/assets/js/50.08ccde73.js"><link rel="prefetch" href="/assets/js/51.e75b1bc7.js"><link rel="prefetch" href="/assets/js/52.676ed932.js"><link rel="prefetch" href="/assets/js/53.fff552bc.js"><link rel="prefetch" href="/assets/js/54.4981adaf.js"><link rel="prefetch" href="/assets/js/55.6f270dd6.js"><link rel="prefetch" href="/assets/js/56.ed45f328.js"><link rel="prefetch" href="/assets/js/58.034f4cf3.js"><link rel="prefetch" href="/assets/js/59.f567a814.js"><link rel="prefetch" href="/assets/js/6.6c659510.js"><link rel="prefetch" href="/assets/js/60.f27e8593.js"><link rel="prefetch" href="/assets/js/61.0e18e3e1.js"><link rel="prefetch" href="/assets/js/7.b7348597.js"><link rel="prefetch" href="/assets/js/8.8f481eb9.js"><link rel="prefetch" href="/assets/js/9.88b2a566.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f48fada0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/LOGO.png" alt="JSChen" class="logo"> <span class="site-name can-hide">JSChen</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术提升" class="dropdown-title"><span class="title">技术提升</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端进阶之路
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/architect/base/" class="nav-link">
+  javaScript基础
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/network/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/vue/" class="nav-link">
+  Vue.js
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/engineering/" class="nav-link">
+  前端工程化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          运维小兴趣
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/ops/linux/" class="nav-link">
+  linux
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/nginx/" class="nav-link">
+  nginx
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/docker/" class="nav-link router-link-exact-active router-link-active">
+  docker
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><span class="title">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/interview/included/" class="nav-link">
+  面试题收录
+</a></li><li class="dropdown-item"><!----> <a href="/pages/interview/plan/4-8/" class="nav-link">
+  面试准备
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/essay/" class="nav-link">
+  随笔
+</a></li><li class="dropdown-item"><!----> <a href="/pages/saying/" class="nav-link">
+  名言小课堂
+</a></li><li class="dropdown-item"><!----> <a href="/pages/about/" class="nav-link">
+  关于
+</a></li><li class="dropdown-item"><!----> <a href="/pages/pdf/" class="nav-link">
+  收藏书籍
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogroll/" class="nav-link">
+  友情链接
+</a></li><li class="dropdown-item"><!----> <a href="/pages/story/" class="nav-link">
+  故事
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/guestccc/guestccc.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术提升" class="dropdown-title"><span class="title">技术提升</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端进阶之路
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/architect/base/" class="nav-link">
+  javaScript基础
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/network/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/vue/" class="nav-link">
+  Vue.js
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/engineering/" class="nav-link">
+  前端工程化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          运维小兴趣
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/ops/linux/" class="nav-link">
+  linux
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/nginx/" class="nav-link">
+  nginx
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/docker/" class="nav-link router-link-exact-active router-link-active">
+  docker
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><span class="title">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/interview/included/" class="nav-link">
+  面试题收录
+</a></li><li class="dropdown-item"><!----> <a href="/pages/interview/plan/4-8/" class="nav-link">
+  面试准备
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/essay/" class="nav-link">
+  随笔
+</a></li><li class="dropdown-item"><!----> <a href="/pages/saying/" class="nav-link">
+  名言小课堂
+</a></li><li class="dropdown-item"><!----> <a href="/pages/about/" class="nav-link">
+  关于
+</a></li><li class="dropdown-item"><!----> <a href="/pages/pdf/" class="nav-link">
+  收藏书籍
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogroll/" class="nav-link">
+  友情链接
+</a></li><li class="dropdown-item"><!----> <a href="/pages/story/" class="nav-link">
+  故事
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/guestccc/guestccc.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>docker基本操作</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/technology/ops/docker/" class="active sidebar-link">从 docker 工作流来了解学习 docker</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/technology/ops/docker/#捋一下流程" class="sidebar-link">捋一下流程</a></li><li class="sidebar-sub-header"><a href="/pages/technology/ops/docker/#_1-dockerfile" class="sidebar-link">1. dockerfile</a></li><li class="sidebar-sub-header"><a href="/pages/technology/ops/docker/#_2-docker-image-镜像" class="sidebar-link">2. docker image 镜像</a></li><li class="sidebar-sub-header"><a href="/pages/technology/ops/docker/#_3-docker-container-容器" class="sidebar-link">3. docker container 容器</a></li><li class="sidebar-sub-header"><a href="/pages/technology/ops/docker/#_4-常用命令" class="sidebar-link">4. 常用命令</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>jenkins + docker 之持续构建持续部署(CI/CD)</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="从-docker-工作流来了解学习-docker"><a href="#从-docker-工作流来了解学习-docker" class="header-anchor">#</a> 从 docker 工作流来了解学习 docker</h1> <h2 id="捋一下流程"><a href="#捋一下流程" class="header-anchor">#</a> 捋一下流程</h2> <p><img src="/assets/img/docker1.png" alt="/assets/img/docker1"></p> <p>流程描述：</p> <p>首先 <code>dockerfile</code> 是用来干嘛的呢，他是用来定制镜像的一个东西（文件），可以把它想象做源码，通过<strong>命令</strong> <code>docker build</code> 之后会生成 <code>docker image</code>（镜像），其实就是可以理解成一个前端项目的打包，而 <code>docker image</code> 通过<strong>命令</strong> <code>docker run</code> 基于一个镜像 <code>docker image</code> 启动一个容器 <code>docker container</code></p> <div class="custom-block tip"><p class="custom-block-title">与前端项目做对比</p> <p>前端项目: 源码打包 --&gt; 打包后文件 --&gt; 用打包后的文件在 xx 端口运行文件
+docker: dockerfile打包 --&gt; 镜像 --&gt; 用打包后的镜像在 xx 端口运行容器</p> <p>docker流程简化: dockerfile --&gt; docker image --&gt; docker container</p></div> <p>下面来分别细品一下这三个东西</p> <h2 id="_1-dockerfile"><a href="#_1-dockerfile" class="header-anchor">#</a> 1. dockerfile</h2> <p>这个东西就是一个文件，文件里面写一条又一条的 指令 ，每一条指令构建一层，因此每一条指令的内容，就是描述该层应当如何构建。</p> <p>举个例子</p> <div class="language-powershell extra-class"><pre class="language-powershell"><code><span class="token comment"># dockerifle</span>
+<span class="token keyword">FROM</span> nginx
+RUN <span class="token function">echo</span> <span class="token string">'&lt;h1&gt;Hello, Docker!&lt;/h1&gt;'</span> &gt; <span class="token operator">/</span>usr<span class="token operator">/</span>share<span class="token operator">/</span>nginx<span class="token operator">/</span>html<span class="token operator">/</span>index<span class="token punctuation">.</span>html
+</code></pre></div><p>上面这个 dockerifle 这个文件写了两行指令，也就是两层，可以想象成是楼层</p> <table><thead><tr><th>一层</th> <th><code>FROM nginx</code></th></tr></thead> <tbody><tr><td>二层</td> <td><code>RUN echo '&lt;h1&gt;Hello, Docker!&lt;/h1&gt;' &gt; /usr/share/nginx/html/index.html</code></td></tr></tbody></table> <p>这个层的概念挺重要的，docker 如今这么🔥，这种机制就是原因之一</p> <h2 id="_2-docker-image-镜像"><a href="#_2-docker-image-镜像" class="header-anchor">#</a> 2. docker image 镜像</h2> <p>什么是镜像呢</p> <p>指定 dockerfile 通过 <strong>命令</strong> <code>docker build</code> 后生成的文件系统</p> <p>这个文件系统，他也是分层的哈，采用的是分级存储机制，</p> <p>这种分层存储机制有些特别之处，举两个例子：</p> <ol><li>两个层次和顺序上有所相同docker文件</li></ol> <div class="language-powershell extra-class"><pre class="language-powershell"><code><span class="token comment"># Dcokerfile</span>
+<span class="token keyword">FROM</span> nginx
+RUN <span class="token function">echo</span> <span class="token string">'&lt;h1&gt;Hello, Docker!&lt;/h1&gt;'</span> &gt; <span class="token operator">/</span>usr<span class="token operator">/</span>share<span class="token operator">/</span>nginx<span class="token operator">/</span>html<span class="token operator">/</span>index<span class="token punctuation">.</span>html
+RUN <span class="token function">echo</span> <span class="token string">'&lt;h1&gt;Hello, Docker2!&lt;/h1&gt;'</span> &gt; <span class="token operator">/</span>usr<span class="token operator">/</span>share<span class="token operator">/</span>nginx<span class="token operator">/</span>html<span class="token operator">/</span>index<span class="token punctuation">.</span>html
+</code></pre></div><div class="language-powershell extra-class"><pre class="language-powershell"><code><span class="token comment"># Dcokerfile.2</span>
+<span class="token keyword">FROM</span> nginx
+RUN <span class="token function">echo</span> <span class="token string">'&lt;h1&gt;Hello, Docker!&lt;/h1&gt;'</span> &gt; <span class="token operator">/</span>usr<span class="token operator">/</span>share<span class="token operator">/</span>nginx<span class="token operator">/</span>html<span class="token operator">/</span>index<span class="token punctuation">.</span>html
+RUN <span class="token function">echo</span> <span class="token string">'&lt;h1&gt;Hello, Docker3!&lt;/h1&gt;'</span> &gt; <span class="token operator">/</span>usr<span class="token operator">/</span>share<span class="token operator">/</span>nginx<span class="token operator">/</span>html<span class="token operator">/</span>index<span class="token punctuation">.</span>html
+</code></pre></div><p>分别打包两个 dockerfile 来研究下</p> <blockquote><p>我这里是在桌面目录下的 dockerfile 文件夹下建了两个文件，分别是 <code>Dockerfile.2</code> 和 <code>Dockerfile</code>，并且在桌面目录下执行了 <code>docker build</code></p></blockquote> <p><strong>预设：本地已有 <code>nginx</code> 镜像， ID:ed21b7a8aee9</strong></p> <p><code>docker build -t nginx:ccc1 -f dockerfile/Dockerfile dockerfile</code></p> <div class="language-powershell extra-class"><pre class="language-powershell"><code><span class="token comment"># Dcokerfile</span>
+ccc@cccde<span class="token operator">-</span>MBP  ~<span class="token operator">/</span>Desktop  docker build <span class="token operator">-</span>t nginx:ccc1 <span class="token operator">-</span>f dockerfile<span class="token operator">/</span>Dockerfile dockerfile
+Sending build context to Docker daemon  3<span class="token punctuation">.</span>072kB
+Step 1<span class="token operator">/</span>3 : <span class="token keyword">FROM</span> nginx
+ <span class="token operator">--</span><span class="token operator">-</span>&gt; ed21b7a8aee9 <span class="token comment"># 这里是直接拿的我本地的nginx镜像来作为这一层的镜像 -- 后面解释</span>
+Step 2<span class="token operator">/</span>3 : RUN <span class="token function">echo</span> <span class="token string">'&lt;h1&gt;Hello, Docker!&lt;/h1&gt;'</span> &gt; <span class="token operator">/</span>usr<span class="token operator">/</span>share<span class="token operator">/</span>nginx<span class="token operator">/</span>html<span class="token operator">/</span>index<span class="token punctuation">.</span>html
+ <span class="token operator">--</span><span class="token operator">-</span>&gt; Running in 807fc992f1a2
+Removing intermediate container 807fc992f1a2
+ <span class="token operator">--</span><span class="token operator">-</span>&gt; 3e29b42cb5c0 <span class="token comment"># 这里是生成新一层镜像</span>
+Step 3<span class="token operator">/</span>3 : RUN <span class="token function">echo</span> <span class="token string">'&lt;h1&gt;Hello, Docker2!&lt;/h1&gt;'</span> &gt; <span class="token operator">/</span>usr<span class="token operator">/</span>share<span class="token operator">/</span>nginx<span class="token operator">/</span>html<span class="token operator">/</span>index<span class="token punctuation">.</span>html
+ <span class="token operator">--</span><span class="token operator">-</span>&gt; Running in 20cdcb26f67a
+Removing intermediate container 20cdcb26f67a
+ <span class="token operator">--</span><span class="token operator">-</span>&gt; 4e070946a40c <span class="token comment"># 这里是生成新一层镜像</span>
+Successfully built 4e070946a40c
+Successfully tagged nginx:ccc1
+</code></pre></div><p><code>docker build -t nginx:ccc2 -f dockerfile/Dockerfile.2 dockerfile</code></p> <div class="language-powershell extra-class"><pre class="language-powershell"><code><span class="token comment"># Dcokerfile.2</span>
+ ccc@cccde<span class="token operator">-</span>MBP  ~<span class="token operator">/</span>Desktop  docker build <span class="token operator">-</span>t nginx:ccc2 <span class="token operator">-</span>f dockerfile<span class="token operator">/</span>Dockerfile<span class="token punctuation">.</span>2 dockerfile
+Sending build context to Docker daemon  3<span class="token punctuation">.</span>072kB
+Step 1<span class="token operator">/</span>3 : <span class="token keyword">FROM</span> nginx
+ <span class="token operator">--</span><span class="token operator">-</span>&gt; ed21b7a8aee <span class="token comment"># 这里是直接拿的我本地的nginx镜像来作为这一层的镜像 -- 后面解释</span>
+Step 2<span class="token operator">/</span>3 : RUN <span class="token function">echo</span> <span class="token string">'&lt;h1&gt;Hello, Docker!&lt;/h1&gt;'</span> &gt; <span class="token operator">/</span>usr<span class="token operator">/</span>share<span class="token operator">/</span>nginx<span class="token operator">/</span>html<span class="token operator">/</span>index<span class="token punctuation">.</span>html
+ <span class="token operator">--</span><span class="token operator">-</span>&gt; <span class="token keyword">Using</span> cache
+ <span class="token operator">--</span><span class="token operator">-</span>&gt; 3e29b42cb5c0  <span class="token comment"># 这里是用上一个镜像同一层的镜像</span>
+Step 3<span class="token operator">/</span>3 : RUN <span class="token function">echo</span> <span class="token string">'&lt;h1&gt;Hello, Docker3!&lt;/h1&gt;'</span> &gt; <span class="token operator">/</span>usr<span class="token operator">/</span>share<span class="token operator">/</span>nginx<span class="token operator">/</span>html<span class="token operator">/</span>index<span class="token punctuation">.</span>html
+ <span class="token operator">--</span><span class="token operator">-</span>&gt; Running in 653187eeac8b
+Removing intermediate container 653187eeac8b
+ <span class="token operator">--</span><span class="token operator">-</span>&gt; 03d5affd23d7 <span class="token comment"># 这里是生成新一层镜像</span>
+Successfully built 03d5affd23d7
+Successfully tagged nginx:ccc2
+</code></pre></div><p>解释：</p> <p>首先本地已有 <code>nginx</code> 镜像，ID: ed21b7a8aee</p> <p>假设这个 nginx 是两层哈，看下第一张图</p> <p><img src="/assets/img/docker2.png" alt="docker2"></p> <p>看下第二张图：</p> <p><img src="/assets/img/docker3.png" alt="docker2"></p> <p>第二张图，由于 nginx:ccc 镜像的第一层，引入的就是 nginx 镜像，所以直接引用了 nginx 镜像来作为 nginx:ccc 镜像的第一层镜像，那么 nginx:ccc 镜像的第一层与 nginx 镜像开始平行，而第二层以下，都是新生成一层镜像</p> <p>看下第三张图：</p> <p><img src="/assets/img/docker4.png" alt="docker2"></p> <p>第三张图，由于 nginx:ccc2 镜像的第一层，引入的就是 nginx 镜像，所以直接引用了 nginx 镜像来作为 nginx:ccc2 镜像的第一层镜像，那么 nginx:ccc2 镜像的第一层与 nginx 镜像和 nginx:ccc 镜像的第一层开始平行，那么 nginx:ccc2 镜像的第二层也与 nginx:ccc 镜像的第二层平行，而又因为 nginx:ccc2 镜像的第二层与 nginx:ccc 镜像的第二层平行且相等，所以 nginx:ccc2 在 docker build 的时候，第二层直接引用了 nginx:ccc 镜像的第二层</p> <p>用表格来看的话是这样子</p> <table><thead><tr><th></th> <th>nginx:ccc</th> <th>nginx:ccc2</th> <th>特点</th></tr></thead> <tbody><tr><td>第一层</td> <td>nginx</td> <td>nginx</td> <td>同层且相同</td></tr> <tr><td>第二层</td> <td><code>RUN echo '&lt;h1&gt;Hello, Docker!&lt;/h1&gt;' &gt; /usr/share/nginx/html/index.html</code></td> <td><code>RUN echo '&lt;h1&gt;Hello, Docker!&lt;/h1&gt;' &gt; /usr/share/nginx/html/index.html</code></td> <td>同层且相同</td></tr> <tr><td>第三层</td> <td><code>RUN echo '&lt;h1&gt;Hello, Docker2!&lt;/h1&gt;' &gt; /usr/share/nginx/html/index.html</code></td> <td><code>RUN echo '&lt;h1&gt;Hello, Docker3!&lt;/h1&gt;' &gt; /usr/share/nginx/html/index.html</code></td> <td>同层且不相同</td></tr></tbody></table> <h2 id="_3-docker-container-容器"><a href="#_3-docker-container-容器" class="header-anchor">#</a> 3. docker container 容器</h2> <p>一句话，容器也是分层，区别在于，容器是运行时的，实实在在的在跑相应的镜像</p> <p>区别在于什么呢，来理解一下哈</p> <div class="custom-block tip"><p class="custom-block-title">重点理解 不懂找我</p> <p>镜像所谓的的分层是对所有镜像中每一层整合后进行排版，存的只是尚未执行的执行过程的树状流程图，而容器是自己镜像所有层执行后的文件系统，也就是对于镜像而已，镜像与镜像之间可能共享某几层，而对于容器而言，容器和容器之间都是一份自己所属镜像运行的结果（这个结果其实就是所有层执行后，对文件系统的所有更改后的文件系统而已也就是文件而已）</p></div> <h2 id="_4-常用命令"><a href="#_4-常用命令" class="header-anchor">#</a> 4. 常用命令</h2> <ol><li>docker build</li></ol> <p><code>docker build -t nginx:ccc2 -f dockerfile/Dockerfile.2 dockerfile</code></p> <p>指定 Dockerfile 目录 dockerfile/Dockerfile ，指定上下文为路径 dockerfile ，</p> <p>--tag/-t 是tag，通常是 tag:name 格式或者 name 格式</p> <p>-f 指定要使用的 Dockerfile 的路径</p> <ol start="2"><li>docker pull</li></ol> <p><code>docker pull nginx</code></p> <ol start="3"><li>docker image</li></ol> <p><code>docker images -a</code></p> <p>列出所有镜像</p> <p>-a 所有</p> <p><code>docker images nginx</code></p> <p>列出所有 REPOSITORY 为 nginx 的镜像</p> <p><code>docker image prune</code></p> <p>删除虚悬镜像</p> <ol start="4"><li>docker run</li></ol> <p><code>docker run -d --name myNginx -p 8080:80 nginx:ccc</code></p> <p>-d 后台运行</p> <p>--name 给容器命名</p> <p>-p 指定宿主端口:容器端口 映射</p> <p>nginx:ccc 指定基础镜像</p> <ol start="5"><li>docker stop/start/restart</li></ol> <p><code>docker stop/start/restart nginx</code></p> <p>停止，启动，重启 nginx 容器</p> <ol start="6"><li>docker rm</li></ol> <p><code>docker rm nginx</code></p> <p>删除 nginx 容器</p> <p><code>docker rmi nginx</code></p> <ol start="7"><li>docker-compose</li></ol> <p>参考链接</p> <p>这边感谢一下 bingo ，能有这篇文章的输出得感谢 bingo 通宵教学</p> <p><a href="https://bingozb.github.io/" target="_blank" rel="noopener noreferrer">bingo blog<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2020/5/30 下午2:06:25</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/pages/technology/ops/docker/jenkins.html">
+        jenkins
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.c2508881.js" defer></script><script src="/assets/js/2.cf1aef41.js" defer></script><script src="/assets/js/57.f01b8ee4.js" defer></script>
+  </body>
+</html>

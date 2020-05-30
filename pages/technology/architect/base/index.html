@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>原型链 | JSChen</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="dns-prefetch" href="//blog.jschen.cc">
+  <link rel="icon" href="/assets/img/LOGO.png" type="image/png">
+  <script type="text/javascript" src="/assets/sitemap/baidu.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
+  <meta name="keywords" content="ccc,jschen,陈程城,vue,前端,web前端,前端基础,bind,apply,call,prototype,tcp/ip,TCP/IP,webpack,nuxt,event-loop,作用域链,执行上下文,js,jschen,javaScript,new,class,es6,new 实质,node,babel,ci/cd,CI/CD,vue源码,前端进阶,">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.f48fada0.css" as="style"><link rel="preload" href="/assets/js/app.c2508881.js" as="script"><link rel="preload" href="/assets/js/2.cf1aef41.js" as="script"><link rel="preload" href="/assets/js/32.cb4ee37d.js" as="script"><link rel="prefetch" href="/assets/js/10.56128c99.js"><link rel="prefetch" href="/assets/js/11.c8b3f272.js"><link rel="prefetch" href="/assets/js/12.4b04cebc.js"><link rel="prefetch" href="/assets/js/13.e5192576.js"><link rel="prefetch" href="/assets/js/14.82cde3ed.js"><link rel="prefetch" href="/assets/js/15.6e3e8fd4.js"><link rel="prefetch" href="/assets/js/16.edd9a16c.js"><link rel="prefetch" href="/assets/js/17.fea4da74.js"><link rel="prefetch" href="/assets/js/18.c27a81b3.js"><link rel="prefetch" href="/assets/js/19.4d0e4e25.js"><link rel="prefetch" href="/assets/js/20.d3d58085.js"><link rel="prefetch" href="/assets/js/21.a494675f.js"><link rel="prefetch" href="/assets/js/22.a8057eda.js"><link rel="prefetch" href="/assets/js/23.14b6a967.js"><link rel="prefetch" href="/assets/js/24.d09b1656.js"><link rel="prefetch" href="/assets/js/25.58dfcb2d.js"><link rel="prefetch" href="/assets/js/26.6c359997.js"><link rel="prefetch" href="/assets/js/27.36c46610.js"><link rel="prefetch" href="/assets/js/28.b4a4095e.js"><link rel="prefetch" href="/assets/js/29.e7164acd.js"><link rel="prefetch" href="/assets/js/3.95b1062e.js"><link rel="prefetch" href="/assets/js/30.425b18bf.js"><link rel="prefetch" href="/assets/js/31.bfb69108.js"><link rel="prefetch" href="/assets/js/33.a36f6ded.js"><link rel="prefetch" href="/assets/js/34.8e75078d.js"><link rel="prefetch" href="/assets/js/35.4b368081.js"><link rel="prefetch" href="/assets/js/36.1b0e1f3b.js"><link rel="prefetch" href="/assets/js/37.30df97f4.js"><link rel="prefetch" href="/assets/js/38.58842bbf.js"><link rel="prefetch" href="/assets/js/39.1841efd2.js"><link rel="prefetch" href="/assets/js/4.c3f9504b.js"><link rel="prefetch" href="/assets/js/40.144e05fd.js"><link rel="prefetch" href="/assets/js/41.dfbe55dd.js"><link rel="prefetch" href="/assets/js/42.fcc3627f.js"><link rel="prefetch" href="/assets/js/43.a0b63a40.js"><link rel="prefetch" href="/assets/js/44.0fbecdce.js"><link rel="prefetch" href="/assets/js/45.7dc4360a.js"><link rel="prefetch" href="/assets/js/46.112e4475.js"><link rel="prefetch" href="/assets/js/47.fda8fe3f.js"><link rel="prefetch" href="/assets/js/48.3745fc99.js"><link rel="prefetch" href="/assets/js/49.4df3b896.js"><link rel="prefetch" href="/assets/js/5.abc82d58.js"><link rel="prefetch" href="/assets/js/50.08ccde73.js"><link rel="prefetch" href="/assets/js/51.e75b1bc7.js"><link rel="prefetch" href="/assets/js/52.676ed932.js"><link rel="prefetch" href="/assets/js/53.fff552bc.js"><link rel="prefetch" href="/assets/js/54.4981adaf.js"><link rel="prefetch" href="/assets/js/55.6f270dd6.js"><link rel="prefetch" href="/assets/js/56.ed45f328.js"><link rel="prefetch" href="/assets/js/57.f01b8ee4.js"><link rel="prefetch" href="/assets/js/58.034f4cf3.js"><link rel="prefetch" href="/assets/js/59.f567a814.js"><link rel="prefetch" href="/assets/js/6.6c659510.js"><link rel="prefetch" href="/assets/js/60.f27e8593.js"><link rel="prefetch" href="/assets/js/61.0e18e3e1.js"><link rel="prefetch" href="/assets/js/7.b7348597.js"><link rel="prefetch" href="/assets/js/8.8f481eb9.js"><link rel="prefetch" href="/assets/js/9.88b2a566.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f48fada0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/LOGO.png" alt="JSChen" class="logo"> <span class="site-name can-hide">JSChen</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术提升" class="dropdown-title"><span class="title">技术提升</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端进阶之路
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/architect/base/" class="nav-link router-link-exact-active router-link-active">
+  javaScript基础
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/network/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/vue/" class="nav-link">
+  Vue.js
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/engineering/" class="nav-link">
+  前端工程化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          运维小兴趣
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/ops/linux/" class="nav-link">
+  linux
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/nginx/" class="nav-link">
+  nginx
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/docker/" class="nav-link">
+  docker
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><span class="title">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/interview/included/" class="nav-link">
+  面试题收录
+</a></li><li class="dropdown-item"><!----> <a href="/pages/interview/plan/4-8/" class="nav-link">
+  面试准备
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/essay/" class="nav-link">
+  随笔
+</a></li><li class="dropdown-item"><!----> <a href="/pages/saying/" class="nav-link">
+  名言小课堂
+</a></li><li class="dropdown-item"><!----> <a href="/pages/about/" class="nav-link">
+  关于
+</a></li><li class="dropdown-item"><!----> <a href="/pages/pdf/" class="nav-link">
+  收藏书籍
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogroll/" class="nav-link">
+  友情链接
+</a></li><li class="dropdown-item"><!----> <a href="/pages/story/" class="nav-link">
+  故事
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/guestccc/guestccc.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术提升" class="dropdown-title"><span class="title">技术提升</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端进阶之路
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/architect/base/" class="nav-link router-link-exact-active router-link-active">
+  javaScript基础
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/network/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/vue/" class="nav-link">
+  Vue.js
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/engineering/" class="nav-link">
+  前端工程化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          运维小兴趣
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/ops/linux/" class="nav-link">
+  linux
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/nginx/" class="nav-link">
+  nginx
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/docker/" class="nav-link">
+  docker
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><span class="title">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/interview/included/" class="nav-link">
+  面试题收录
+</a></li><li class="dropdown-item"><!----> <a href="/pages/interview/plan/4-8/" class="nav-link">
+  面试准备
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/essay/" class="nav-link">
+  随笔
+</a></li><li class="dropdown-item"><!----> <a href="/pages/saying/" class="nav-link">
+  名言小课堂
+</a></li><li class="dropdown-item"><!----> <a href="/pages/about/" class="nav-link">
+  关于
+</a></li><li class="dropdown-item"><!----> <a href="/pages/pdf/" class="nav-link">
+  收藏书籍
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogroll/" class="nav-link">
+  友情链接
+</a></li><li class="dropdown-item"><!----> <a href="/pages/story/" class="nav-link">
+  故事
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/guestccc/guestccc.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>基础知识</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/technology/architect/base/" class="active sidebar-link">原型链</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/technology/architect/base/#带着问题整理思路" class="sidebar-link">带着问题整理思路</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/base/#原型是什么" class="sidebar-link">原型是什么</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/base/#constructor属性" class="sidebar-link">constructor属性</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/base/#什么是原型链" class="sidebar-link">什么是原型链</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/base/#完整的原型构造函数关系图" class="sidebar-link">完整的原型构造函数关系图</a></li></ul></li><li><a href="/pages/technology/architect/base/this.html" class="sidebar-link">this</a></li><li><a href="/pages/technology/architect/base/execution_scope.html" class="sidebar-link">从 执行上下文栈 到 作用域链 到 闭包</a></li><li><a href="/pages/technology/architect/base/new.html" class="sidebar-link">new 实现</a></li><li><a href="/pages/technology/architect/base/apply_call_bind.html" class="sidebar-link">apply call bind 模拟实现</a></li><li><a href="/pages/technology/architect/base/type.html" class="sidebar-link">类型判断</a></li><li><a href="/pages/technology/architect/base/event-loop.html" class="sidebar-link">event-loop 事件循环</a></li><li><a href="/pages/technology/architect/base/code.html" class="sidebar-link">面向对象（oop），面向过程（POP），函数式编程（fp）</a></li><li><a href="/pages/technology/architect/base/css.html" class="sidebar-link">css 基础篇</a></li><li><a href="/pages/technology/architect/base/html.html" class="sidebar-link">html 基础篇</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>es6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>函数式编程</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>设计模式</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="原型链"><a href="#原型链" class="header-anchor">#</a> 原型链</h1> <p>首先来看下 <a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/Object_prototypes" target="_blank" rel="noopener noreferrer">MDN 对象原型<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 这句</p> <blockquote><p>JavaScript 常被描述为一种基于原型的语言 (prototype-based language)</p></blockquote> <h2 id="带着问题整理思路"><a href="#带着问题整理思路" class="header-anchor">#</a> 带着问题整理思路</h2> <ol><li><p>new 的用法,直接查阅mdn <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new" target="_blank" rel="noopener noreferrer">MDN new 运算符<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></li> <li><p>原型对象是什么</p></li> <li><p>constructor 属性</p></li> <li><p>什么是原型链</p></li></ol> <h2 id="原型是什么"><a href="#原型是什么" class="header-anchor">#</a> 原型是什么</h2> <h3 id="_1-先来理解一句话哈-mdn-对象原型"><a href="#_1-先来理解一句话哈-mdn-对象原型" class="header-anchor">#</a> 1. 先来理解一句话哈 <a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/Object_prototypes" target="_blank" rel="noopener noreferrer">MDN 对象原型<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></h3> <blockquote><p>在javascript中，函数可以有属性。 每个函数都有一个特殊的属性叫作原型</p></blockquote> <p>每一个函数，都存在一个 prototype 属性， 而这个 prototype 属性指向就是原型（也叫做原型对象）</p> <p><strong>下面是我个人的理解哈：👇</strong></p> <p>原型是个对象，创建一个函数，我们可以通过访问该函数的 prototype 属性，拿到这个原型对象</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">JSChen</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">JSChen</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span>
+<span class="token comment">// {</span>
+<span class="token comment">//   constructor: ƒ JSChen() // 构造函数，指向函数本身</span>
+<span class="token comment">//   __proto__: Object // 创建这个</span>
+<span class="token comment">// }</span>
+</code></pre></div><p>也就是说 <code>JSChen.prototype</code> 指向的就是这个对象</p> <p><img src="/assets/img/prototype1.png" alt="prototype1"></p> <h3 id="_2-再来理解一句话-mdn-继承与原型链"><a href="#_2-再来理解一句话-mdn-继承与原型链" class="header-anchor">#</a> 2. 再来理解一句话 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain" target="_blank" rel="noopener noreferrer">MDN 继承与原型链<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></h3> <blockquote><p><code>JavaScript</code> 只有一种结构：对象。每个实例对象（ <code>object</code> ）都有一个私有属性（称之为 <code>__proto__</code> ）指向它的构造函数的原型对象（ <code>prototype</code> ）。该原型对象也有一个自己的原型对象( <code>__proto__</code> ) ，</p></blockquote> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>我感觉是mdn翻译错了哈</p> <p>讲道理，构造函数也有可能是其他构造函数的实例</p> <p>所以应该说是 <code>实例的原型</code> 而不是 <code>构造函数的原型</code></p></div> <p>我们先来实例一个对象看看哈</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">JSChen</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">JSChen</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span>
+<span class="token keyword">var</span> ccc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSChen</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ccc<span class="token punctuation">.</span>__proto__<span class="token punctuation">)</span>
+</code></pre></div><p>再来判断一下 实例对象的 <code>__proto__</code> 是否 全等于 其构造函数的 <code>prototype</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">JSChen</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> ccc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSChen</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token class-name">JSChen</span><span class="token punctuation">.</span>prototype <span class="token operator">===</span> ccc<span class="token punctuation">.</span>__proto__
+<span class="token comment">// true</span>
+</code></pre></div><p><img src="/assets/img/prototype2.png" alt="prototype2"></p> <h3 id="_3-原型类似一个模版"><a href="#_3-原型类似一个模版" class="header-anchor">#</a> 3. 原型类似一个模版</h3> <blockquote><p>每个对象拥有一个原型对象，对象以其原型为模板、从原型继承方法和属性</p></blockquote> <p>先来两个概念</p> <ul><li><p>对象是引用类型的</p> <p>ccc.<strong>proto</strong> 和 JSChen.prototype 引用的是用一个对象</p></li> <li><p>属性的访问机制</p> <p>当读取实例的属性时，如果找不到，就会查找与对象关联的原型中的属性，如果还查不到，就去找原型的原型，一直找到最顶层为止。</p> <p><code>a.b</code> 读不到，就去 <code>a.__proto__</code> 找 <code>b</code> ,如果在找不到并且 <code>a.__proto__</code> 不是最顶层，就继续去 <code>a.__proto__.__proto__</code> 以此类推</p></li></ul> <hr> <p>试一下哈</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">JSChen</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+<span class="token class-name">JSChen</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'啊城'</span>
+<span class="token keyword">var</span> ccc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSChen</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ccc<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token comment">// 啊城</span>
+</code></pre></div><p>先给函数 <code>JSChen</code> 的 <code>prototype</code> 加一个 <code>name</code> ，再用函数 <code>JSChen</code> 实例化一个对象 <code>ccc</code> ， <code>ccc.name</code> 找不到， <code>ccc.__proto__.name</code> 找到了</p> <p>再来一个</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">JSChen</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> ccc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSChen</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token class-name">JSChen</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'啊城'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ccc<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token comment">// 啊城</span>
+</code></pre></div><p>先用函数 <code>JSChen</code> 实例化一个对象 <code>ccc</code> ，给函数 <code>JSChen</code> 的 <code>prototype</code> 加一个 <code>name</code> ，由于 <code>JSChen.prototype</code> 和 <code>ccc.__proto__</code> 引用的是同一个对象，所以 <code>ccc.name</code> 找不到， <code>ccc.__proto__.name</code> 找到了</p> <p>也就是说 ccc.name 实际上是 ccc.<strong>proto</strong>.name</p> <h3 id="_4-突如其来一个小问题-对象-是怎么来的？当然是-实例化-出来的啦"><a href="#_4-突如其来一个小问题-对象-是怎么来的？当然是-实例化-出来的啦" class="header-anchor">#</a> 4. <strong>突如其来一个小问题 ———— <code>对象</code> 是怎么来的？当然是 <code>实例化</code> 出来的啦</strong></h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// 语法糖</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 实例化操作</span>
+</code></pre></div><p>其实这里的 <code>{}</code> 不过是个语法糖而已，实质上就是一个实例化操作 <code>new Object()</code></p> <p>所以呢，对象都是实例化出来了，所有的对象都有某个构造函数的实例化对象</p> <p>所以，所有对象都有一个 <code>__proto__</code> 属性，指向 其构造函数的原型对象，而其构造函数的 <code>prototype</code> 属性，也指向其构造函数的原型</p> <h3 id="_5-结论："><a href="#_5-结论：" class="header-anchor">#</a> 5. <strong>结论：</strong></h3> <ul><li>原型是个对象</li> <li>函数 的 <code>prototype</code> 属性 指向一个 原型对象，实例对象 的 <code>__proto__</code> 属性 也指向指向一个 原型对象</li> <li>其实实例对象的原型对象就是其构造函数的原型</li> <li>原型其实就相当于一个模版</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+  constructor<span class="token operator">:</span> ƒ <span class="token function">JSChen</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 构造函数，指向函数本身</span>
+  __proto__<span class="token operator">:</span> Object <span class="token comment">// 创建这个</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="constructor属性"><a href="#constructor属性" class="header-anchor">#</a> constructor属性</h2> <p>每一个原型对象都有一个 <code>constructor</code> 属性， 指向构造函数本身</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">JSChen</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> ccc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSChen</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token class-name">JSChen</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">===</span> JSChen
+ccc<span class="token punctuation">.</span><span class="token class-name">__proto__</span><span class="token punctuation">.</span>constructor <span class="token operator">===</span> JSChen
+</code></pre></div><p><code>JSChen</code> 函数实例化了一个对象 <code>ccc</code> ，那么 <code>ccc.__proto__</code> 和 <code>JSChen.prototype</code> 指向实例对象 <code>ccc</code> 的原型</p> <p>而原型对象有一个 <code>constructor</code> 指向 实例对象的构造函数本身，也就是 <code>ccc.__proto__.constructor</code> 指向 <code>JSChen</code></p> <p>也就是 <code>JSChen.prototype.constructor</code> 指向 <code>JSChen</code></p> <h2 id="什么是原型链"><a href="#什么是原型链" class="header-anchor">#</a> 什么是原型链</h2> <p>对象的 <code>__proto__</code> 属性指向他原型 也就是构造函数的 <code>prototype</code> 属性 <code>，prototype</code> 也是个对象，那么 <code>prototype</code> 的 <code>__proto__</code> 也指向他原型，这样，一层一层往上追溯，这种关系，就被称为 <code>原型链</code></p> <p>例如：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">JSChen</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> ccc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSChen</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+ccc<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> <span class="token class-name">JSChen</span><span class="token punctuation">.</span>prototype<span class="token punctuation">;</span>
+<span class="token class-name">JSChen</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">;</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token comment">// true</span>
+</code></pre></div><p><img src="/assets/img/prototype3.png" alt="原型链"></p> <p>实例对象 <code>ccc</code> 的 <code>__proto__</code> 指向他的原型，也就是 <code>JSChen.prototype</code> , <code>JSChen.prototype</code> 的 <code>__proto__</code> 指向他的原型， 也就是 <code>Object.prototype</code> , <code>Object.prototype</code> 的 <code>__proto__</code> 指向他的原型 也就是 <code>null</code></p> <h2 id="完整的原型构造函数关系图"><a href="#完整的原型构造函数关系图" class="header-anchor">#</a> 完整的原型构造函数关系图</h2> <p><img src="/assets/img/prototype4.png" alt="原型链"></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2020/5/30 下午2:06:25</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/pages/technology/architect/base/this.html">
+        this
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.c2508881.js" defer></script><script src="/assets/js/2.cf1aef41.js" defer></script><script src="/assets/js/32.cb4ee37d.js" defer></script>
+  </body>
+</html>

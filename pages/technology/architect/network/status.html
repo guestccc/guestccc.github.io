@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>http 状态码 | JSChen</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="dns-prefetch" href="//blog.jschen.cc">
+  <link rel="icon" href="/assets/img/LOGO.png" type="image/png">
+  <script type="text/javascript" src="/assets/sitemap/baidu.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
+  <meta name="keywords" content="ccc,jschen,陈程城,vue,前端,web前端,前端基础,bind,apply,call,prototype,tcp/ip,TCP/IP,webpack,nuxt,event-loop,作用域链,执行上下文,js,jschen,javaScript,new,class,es6,new 实质,node,babel,ci/cd,CI/CD,vue源码,前端进阶,">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.f48fada0.css" as="style"><link rel="preload" href="/assets/js/app.c2508881.js" as="script"><link rel="preload" href="/assets/js/2.cf1aef41.js" as="script"><link rel="preload" href="/assets/js/49.4df3b896.js" as="script"><link rel="prefetch" href="/assets/js/10.56128c99.js"><link rel="prefetch" href="/assets/js/11.c8b3f272.js"><link rel="prefetch" href="/assets/js/12.4b04cebc.js"><link rel="prefetch" href="/assets/js/13.e5192576.js"><link rel="prefetch" href="/assets/js/14.82cde3ed.js"><link rel="prefetch" href="/assets/js/15.6e3e8fd4.js"><link rel="prefetch" href="/assets/js/16.edd9a16c.js"><link rel="prefetch" href="/assets/js/17.fea4da74.js"><link rel="prefetch" href="/assets/js/18.c27a81b3.js"><link rel="prefetch" href="/assets/js/19.4d0e4e25.js"><link rel="prefetch" href="/assets/js/20.d3d58085.js"><link rel="prefetch" href="/assets/js/21.a494675f.js"><link rel="prefetch" href="/assets/js/22.a8057eda.js"><link rel="prefetch" href="/assets/js/23.14b6a967.js"><link rel="prefetch" href="/assets/js/24.d09b1656.js"><link rel="prefetch" href="/assets/js/25.58dfcb2d.js"><link rel="prefetch" href="/assets/js/26.6c359997.js"><link rel="prefetch" href="/assets/js/27.36c46610.js"><link rel="prefetch" href="/assets/js/28.b4a4095e.js"><link rel="prefetch" href="/assets/js/29.e7164acd.js"><link rel="prefetch" href="/assets/js/3.95b1062e.js"><link rel="prefetch" href="/assets/js/30.425b18bf.js"><link rel="prefetch" href="/assets/js/31.bfb69108.js"><link rel="prefetch" href="/assets/js/32.cb4ee37d.js"><link rel="prefetch" href="/assets/js/33.a36f6ded.js"><link rel="prefetch" href="/assets/js/34.8e75078d.js"><link rel="prefetch" href="/assets/js/35.4b368081.js"><link rel="prefetch" href="/assets/js/36.1b0e1f3b.js"><link rel="prefetch" href="/assets/js/37.30df97f4.js"><link rel="prefetch" href="/assets/js/38.58842bbf.js"><link rel="prefetch" href="/assets/js/39.1841efd2.js"><link rel="prefetch" href="/assets/js/4.c3f9504b.js"><link rel="prefetch" href="/assets/js/40.144e05fd.js"><link rel="prefetch" href="/assets/js/41.dfbe55dd.js"><link rel="prefetch" href="/assets/js/42.fcc3627f.js"><link rel="prefetch" href="/assets/js/43.a0b63a40.js"><link rel="prefetch" href="/assets/js/44.0fbecdce.js"><link rel="prefetch" href="/assets/js/45.7dc4360a.js"><link rel="prefetch" href="/assets/js/46.112e4475.js"><link rel="prefetch" href="/assets/js/47.fda8fe3f.js"><link rel="prefetch" href="/assets/js/48.3745fc99.js"><link rel="prefetch" href="/assets/js/5.abc82d58.js"><link rel="prefetch" href="/assets/js/50.08ccde73.js"><link rel="prefetch" href="/assets/js/51.e75b1bc7.js"><link rel="prefetch" href="/assets/js/52.676ed932.js"><link rel="prefetch" href="/assets/js/53.fff552bc.js"><link rel="prefetch" href="/assets/js/54.4981adaf.js"><link rel="prefetch" href="/assets/js/55.6f270dd6.js"><link rel="prefetch" href="/assets/js/56.ed45f328.js"><link rel="prefetch" href="/assets/js/57.f01b8ee4.js"><link rel="prefetch" href="/assets/js/58.034f4cf3.js"><link rel="prefetch" href="/assets/js/59.f567a814.js"><link rel="prefetch" href="/assets/js/6.6c659510.js"><link rel="prefetch" href="/assets/js/60.f27e8593.js"><link rel="prefetch" href="/assets/js/61.0e18e3e1.js"><link rel="prefetch" href="/assets/js/7.b7348597.js"><link rel="prefetch" href="/assets/js/8.8f481eb9.js"><link rel="prefetch" href="/assets/js/9.88b2a566.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f48fada0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/LOGO.png" alt="JSChen" class="logo"> <span class="site-name can-hide">JSChen</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术提升" class="dropdown-title"><span class="title">技术提升</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端进阶之路
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/architect/base/" class="nav-link">
+  javaScript基础
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/network/" class="nav-link router-link-active">
+  计算机网络
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/vue/" class="nav-link">
+  Vue.js
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/engineering/" class="nav-link">
+  前端工程化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          运维小兴趣
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/ops/linux/" class="nav-link">
+  linux
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/nginx/" class="nav-link">
+  nginx
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/docker/" class="nav-link">
+  docker
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><span class="title">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/interview/included/" class="nav-link">
+  面试题收录
+</a></li><li class="dropdown-item"><!----> <a href="/pages/interview/plan/4-8/" class="nav-link">
+  面试准备
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/essay/" class="nav-link">
+  随笔
+</a></li><li class="dropdown-item"><!----> <a href="/pages/saying/" class="nav-link">
+  名言小课堂
+</a></li><li class="dropdown-item"><!----> <a href="/pages/about/" class="nav-link">
+  关于
+</a></li><li class="dropdown-item"><!----> <a href="/pages/pdf/" class="nav-link">
+  收藏书籍
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogroll/" class="nav-link">
+  友情链接
+</a></li><li class="dropdown-item"><!----> <a href="/pages/story/" class="nav-link">
+  故事
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/guestccc/guestccc.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术提升" class="dropdown-title"><span class="title">技术提升</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端进阶之路
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/architect/base/" class="nav-link">
+  javaScript基础
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/network/" class="nav-link router-link-active">
+  计算机网络
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/vue/" class="nav-link">
+  Vue.js
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/engineering/" class="nav-link">
+  前端工程化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          运维小兴趣
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/ops/linux/" class="nav-link">
+  linux
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/nginx/" class="nav-link">
+  nginx
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/docker/" class="nav-link">
+  docker
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><span class="title">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/interview/included/" class="nav-link">
+  面试题收录
+</a></li><li class="dropdown-item"><!----> <a href="/pages/interview/plan/4-8/" class="nav-link">
+  面试准备
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/essay/" class="nav-link">
+  随笔
+</a></li><li class="dropdown-item"><!----> <a href="/pages/saying/" class="nav-link">
+  名言小课堂
+</a></li><li class="dropdown-item"><!----> <a href="/pages/about/" class="nav-link">
+  关于
+</a></li><li class="dropdown-item"><!----> <a href="/pages/pdf/" class="nav-link">
+  收藏书籍
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogroll/" class="nav-link">
+  友情链接
+</a></li><li class="dropdown-item"><!----> <a href="/pages/story/" class="nav-link">
+  故事
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/guestccc/guestccc.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>网络协议</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/technology/architect/network/status.html" class="active sidebar-link">http 状态码</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>网络请求</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>网络安全</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>模块加载</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="http-状态码"><a href="#http-状态码" class="header-anchor">#</a> http 状态码</h1> <div class="language-js extra-class"><pre class="language-js"><code><span class="token number">1</span><span class="token function">xx</span> <span class="token punctuation">(</span>临时响应<span class="token punctuation">)</span>表示临时响应并需要请求者继续执行操作的状态代码。
+<span class="token number">100</span> <span class="token punctuation">(</span>继续<span class="token punctuation">)</span> 请求者应当继续提出请求。 服务器返回此代码表示已收到请求的第一部分<span class="token punctuation">,</span>正在等待其余部分。
+<span class="token number">101</span> <span class="token punctuation">(</span>切换协议<span class="token punctuation">)</span> 请求者已要求服务器切换协议<span class="token punctuation">,</span>服务器已确认并准备切换。
+<span class="token number">102</span> <span class="token function">由WebDAV</span><span class="token punctuation">(</span><span class="token constant">RFC</span> <span class="token number">2518</span><span class="token punctuation">)</span>扩展的状态码<span class="token punctuation">,</span>代表处理将被继续执行。
+<span class="token number">2</span><span class="token function">xx</span> <span class="token punctuation">(</span>成功<span class="token punctuation">)</span>表示成功处理了请求的状态代码。
+<span class="token number">200</span> <span class="token punctuation">(</span>成功<span class="token punctuation">)</span> 服务器已成功处理了请求。 通常<span class="token punctuation">,</span>这表示服务器提供了请求的网页。
+<span class="token number">201</span> <span class="token punctuation">(</span>已创建<span class="token punctuation">)</span> 请求成功并且服务器创建了新的资源。
+<span class="token number">202</span> <span class="token punctuation">(</span>已接受<span class="token punctuation">)</span> 服务器已接受请求<span class="token punctuation">,</span>但尚未处理。
+<span class="token number">203</span> <span class="token punctuation">(</span>非授权信息<span class="token punctuation">)</span> 服务器已成功处理了请求<span class="token punctuation">,</span>但返回的信息可能来自另一来源。
+<span class="token number">204</span> <span class="token punctuation">(</span>无内容<span class="token punctuation">)</span> 服务器成功处理了请求<span class="token punctuation">,</span>但没有返回任何内容。
+<span class="token number">205</span> <span class="token punctuation">(</span>重置内容<span class="token punctuation">)</span> 服务器成功处理了请求<span class="token punctuation">,</span>但没有返回任何内容。
+<span class="token number">206</span> <span class="token punctuation">(</span>部分内容<span class="token punctuation">)</span> 服务器成功处理了部分 <span class="token constant">GET</span> 请求。
+<span class="token number">207</span> <span class="token function">由WebDAV</span><span class="token punctuation">(</span><span class="token constant">RFC</span> <span class="token number">2518</span><span class="token punctuation">)</span>扩展的状态码<span class="token punctuation">,</span>代表之后的消息体将是一个<span class="token constant">XML</span>消息<span class="token punctuation">,</span>并且可能依照之前子请求数量的不同<span class="token punctuation">,</span>包含一系列独立的响应代码。
+<span class="token number">3</span><span class="token function">xx</span> <span class="token punctuation">(</span>重定向<span class="token punctuation">)</span> 表示要完成请求<span class="token punctuation">,</span>需要进一步操作。 通常<span class="token punctuation">,</span>这些状态代码用来重定向。
+<span class="token number">300</span> <span class="token punctuation">(</span>多种选择<span class="token punctuation">)</span> 针对请求<span class="token punctuation">,</span>服务器可执行多种操作。 <span class="token function">服务器可根据请求者</span> <span class="token punctuation">(</span>useragent<span class="token punctuation">)</span>选择一项操作<span class="token punctuation">,</span>或提供操作列表供请求者选择。
+<span class="token number">301</span> <span class="token punctuation">(</span>永久移动<span class="token punctuation">)</span> 请求的网页已永久移动到新位置。 <span class="token function">服务器返回此响应</span><span class="token punctuation">(</span>对 <span class="token constant">GET</span> 或<span class="token constant">HEAD</span>请求的响应<span class="token punctuation">)</span>时<span class="token punctuation">,</span>会自动将请求者转到新位置。
+<span class="token number">302</span> <span class="token punctuation">(</span>临时移动<span class="token punctuation">)</span> 服务器目前从不同位置的网页响应请求<span class="token punctuation">,</span>但请求者应继续使用原有位置来进行以后的请求。
+<span class="token number">303</span> <span class="token punctuation">(</span>查看其他位置<span class="token punctuation">)</span> 请求者应当对不同的位置使用单独的 <span class="token constant">GET</span> 请求来检索响应时<span class="token punctuation">,</span>服务器返回此代码。
+<span class="token number">304</span> <span class="token punctuation">(</span>未修改<span class="token punctuation">)</span> 自从上次请求后<span class="token punctuation">,</span>请求的网页未修改过。 服务器返回此响应时<span class="token punctuation">,</span>不会返回网页内容。
+<span class="token number">305</span> <span class="token punctuation">(</span>使用代理<span class="token punctuation">)</span> 请求者只能使用代理访问请求的网页。 如果服务器返回此响应<span class="token punctuation">,</span>还表示请求者应使用代理。
+<span class="token number">307</span> <span class="token punctuation">(</span>临时重定向<span class="token punctuation">)</span> 服务器目前从不同位置的网页响应请求<span class="token punctuation">,</span>但请求者应继续使用原有位置来进行以后的请求。
+<span class="token number">4</span><span class="token function">xx</span> <span class="token punctuation">(</span>请求错误<span class="token punctuation">)</span> 这些状态代码表示请求可能出错<span class="token punctuation">,</span>妨碍了服务器的处理。
+<span class="token number">400</span> <span class="token punctuation">(</span>错误请求<span class="token punctuation">)</span> 服务器不理解请求的语法。
+<span class="token number">401</span> <span class="token punctuation">(</span>未授权<span class="token punctuation">)</span> 请求要求身份验证。 对于需要登录的网页<span class="token punctuation">,</span>服务器可能返回此响应。
+<span class="token number">402</span> 该状态码是为了将来可能的需求而预留的。
+<span class="token number">403</span> <span class="token punctuation">(</span>禁止<span class="token punctuation">)</span> 服务器拒绝请求。
+<span class="token number">404</span> <span class="token punctuation">(</span>未找到<span class="token punctuation">)</span> 服务器找不到请求的网页。
+<span class="token number">405</span> <span class="token punctuation">(</span>方法禁用<span class="token punctuation">)</span> 禁用请求中指定的方法。
+<span class="token number">406</span> <span class="token punctuation">(</span>不接受<span class="token punctuation">)</span> 无法使用请求的内容特性响应请求的网页。
+<span class="token number">407</span> <span class="token punctuation">(</span>需要代理授权<span class="token punctuation">)</span> 此状态代码与 <span class="token number">401</span><span class="token punctuation">(</span>未授权<span class="token punctuation">)</span>类似<span class="token punctuation">,</span>但指定请求者应当授权使用代理。
+<span class="token number">408</span> <span class="token punctuation">(</span>请求超时<span class="token punctuation">)</span>服务器等候请求时发生超时。
+<span class="token number">409</span> <span class="token punctuation">(</span>冲突<span class="token punctuation">)</span> 服务器在完成请求时发生冲突。 服务器必须在响应中包含有关冲突的信息。
+<span class="token number">410</span> <span class="token punctuation">(</span>已删除<span class="token punctuation">)</span> 如果请求的资源已永久删除<span class="token punctuation">,</span>服务器就会返回此响应。
+<span class="token number">411</span> <span class="token punctuation">(</span>需要有效长度<span class="token punctuation">)</span> 服务器不接受不含有效内容长度标头字段的请求。
+<span class="token number">412</span> <span class="token punctuation">(</span>未满足前提条件<span class="token punctuation">)</span> 服务器未满足请求者在请求中设置的其中一个前提条件。
+<span class="token number">413</span> <span class="token punctuation">(</span>请求实体过大<span class="token punctuation">)</span> 服务器无法处理请求<span class="token punctuation">,</span>因为请求实体过大<span class="token punctuation">,</span>超出服务器的处理能力。
+<span class="token number">414</span> <span class="token punctuation">(</span>请求的 <span class="token constant">URI</span> 过长<span class="token punctuation">)</span> 请求的 <span class="token constant">URI</span><span class="token punctuation">(</span>通常为网址<span class="token punctuation">)</span>过长<span class="token punctuation">,</span>服务器无法处理。这比较少见<span class="token punctuation">,</span>通常的情况包括<span class="token operator">:</span>本应使用<span class="token constant">POST</span>方法的表单提交变成了<span class="token constant">GET</span>方法<span class="token punctuation">,</span><span class="token function">导致查询字符串</span><span class="token punctuation">(</span>Query String<span class="token punctuation">)</span>过长。
+<span class="token number">415</span> <span class="token punctuation">(</span>不支持的媒体类型<span class="token punctuation">)</span> 请求的格式不受请求页面的支持。
+<span class="token number">416</span> <span class="token punctuation">(</span>请求范围不符合要求<span class="token punctuation">)</span> 如果页面无法提供请求的范围<span class="token punctuation">,</span>则服务器会返回此状态代码。
+<span class="token number">417</span> <span class="token punctuation">(</span>未满足期望值<span class="token punctuation">)</span> 服务器未满足”期望”请求标头字段的要求。
+<span class="token number">5</span><span class="token function">xx</span> <span class="token punctuation">(</span>服务器错误<span class="token punctuation">)</span>这些状态代码表示服务器在尝试处理请求时发生内部错误。这些错误可能是服务器本身的错误<span class="token punctuation">,</span>而不是请求出错。
+<span class="token number">500</span> <span class="token punctuation">(</span>服务器内部错误<span class="token punctuation">)</span> 服务器遇到错误<span class="token punctuation">,</span>无法完成请求。
+<span class="token number">501</span> <span class="token punctuation">(</span>尚未实施<span class="token punctuation">)</span> 服务器不具备完成请求的功能。 例如<span class="token punctuation">,</span>服务器无法识别请求方法时可能会返回此代码。
+<span class="token number">502</span> <span class="token punctuation">(</span>错误网关<span class="token punctuation">)</span> 服务器作为网关或代理<span class="token punctuation">,</span>从上游服务器收到无效响应。
+<span class="token number">503</span> <span class="token punctuation">(</span>服务不可用<span class="token punctuation">)</span> <span class="token function">服务器目前无法使用</span><span class="token punctuation">(</span>由于超载或停机维护<span class="token punctuation">)</span>。 通常<span class="token punctuation">,</span>这只是暂时状态。
+<span class="token number">504</span> <span class="token punctuation">(</span>网关超时<span class="token punctuation">)</span> 服务器作为网关或代理<span class="token punctuation">,</span>但是没有及时从上游服务器收到请求。
+<span class="token number">505</span> <span class="token punctuation">(</span><span class="token constant">HTTP</span> 版本不受支持<span class="token punctuation">)</span>服务器不支持请求中所用的 <span class="token constant">HTTP</span> 协议版本。
+<span class="token number">600</span> 源站没有返回响应头部<span class="token punctuation">,</span>只返回实体内容
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2020/5/30 下午2:06:25</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/pages/technology/architect/network/" class="router-link-active">
+        计算机网络
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.c2508881.js" defer></script><script src="/assets/js/2.cf1aef41.js" defer></script><script src="/assets/js/49.4df3b896.js" defer></script>
+  </body>
+</html>

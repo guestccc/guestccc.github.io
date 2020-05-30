@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>css 基础篇 | JSChen</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="dns-prefetch" href="//blog.jschen.cc">
+  <link rel="icon" href="/assets/img/LOGO.png" type="image/png">
+  <script type="text/javascript" src="/assets/sitemap/baidu.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
+  <meta name="keywords" content="ccc,jschen,陈程城,vue,前端,web前端,前端基础,bind,apply,call,prototype,tcp/ip,TCP/IP,webpack,nuxt,event-loop,作用域链,执行上下文,js,jschen,javaScript,new,class,es6,new 实质,node,babel,ci/cd,CI/CD,vue源码,前端进阶,">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.f48fada0.css" as="style"><link rel="preload" href="/assets/js/app.c2508881.js" as="script"><link rel="preload" href="/assets/js/2.cf1aef41.js" as="script"><link rel="preload" href="/assets/js/4.c3f9504b.js" as="script"><link rel="prefetch" href="/assets/js/10.56128c99.js"><link rel="prefetch" href="/assets/js/11.c8b3f272.js"><link rel="prefetch" href="/assets/js/12.4b04cebc.js"><link rel="prefetch" href="/assets/js/13.e5192576.js"><link rel="prefetch" href="/assets/js/14.82cde3ed.js"><link rel="prefetch" href="/assets/js/15.6e3e8fd4.js"><link rel="prefetch" href="/assets/js/16.edd9a16c.js"><link rel="prefetch" href="/assets/js/17.fea4da74.js"><link rel="prefetch" href="/assets/js/18.c27a81b3.js"><link rel="prefetch" href="/assets/js/19.4d0e4e25.js"><link rel="prefetch" href="/assets/js/20.d3d58085.js"><link rel="prefetch" href="/assets/js/21.a494675f.js"><link rel="prefetch" href="/assets/js/22.a8057eda.js"><link rel="prefetch" href="/assets/js/23.14b6a967.js"><link rel="prefetch" href="/assets/js/24.d09b1656.js"><link rel="prefetch" href="/assets/js/25.58dfcb2d.js"><link rel="prefetch" href="/assets/js/26.6c359997.js"><link rel="prefetch" href="/assets/js/27.36c46610.js"><link rel="prefetch" href="/assets/js/28.b4a4095e.js"><link rel="prefetch" href="/assets/js/29.e7164acd.js"><link rel="prefetch" href="/assets/js/3.95b1062e.js"><link rel="prefetch" href="/assets/js/30.425b18bf.js"><link rel="prefetch" href="/assets/js/31.bfb69108.js"><link rel="prefetch" href="/assets/js/32.cb4ee37d.js"><link rel="prefetch" href="/assets/js/33.a36f6ded.js"><link rel="prefetch" href="/assets/js/34.8e75078d.js"><link rel="prefetch" href="/assets/js/35.4b368081.js"><link rel="prefetch" href="/assets/js/36.1b0e1f3b.js"><link rel="prefetch" href="/assets/js/37.30df97f4.js"><link rel="prefetch" href="/assets/js/38.58842bbf.js"><link rel="prefetch" href="/assets/js/39.1841efd2.js"><link rel="prefetch" href="/assets/js/40.144e05fd.js"><link rel="prefetch" href="/assets/js/41.dfbe55dd.js"><link rel="prefetch" href="/assets/js/42.fcc3627f.js"><link rel="prefetch" href="/assets/js/43.a0b63a40.js"><link rel="prefetch" href="/assets/js/44.0fbecdce.js"><link rel="prefetch" href="/assets/js/45.7dc4360a.js"><link rel="prefetch" href="/assets/js/46.112e4475.js"><link rel="prefetch" href="/assets/js/47.fda8fe3f.js"><link rel="prefetch" href="/assets/js/48.3745fc99.js"><link rel="prefetch" href="/assets/js/49.4df3b896.js"><link rel="prefetch" href="/assets/js/5.abc82d58.js"><link rel="prefetch" href="/assets/js/50.08ccde73.js"><link rel="prefetch" href="/assets/js/51.e75b1bc7.js"><link rel="prefetch" href="/assets/js/52.676ed932.js"><link rel="prefetch" href="/assets/js/53.fff552bc.js"><link rel="prefetch" href="/assets/js/54.4981adaf.js"><link rel="prefetch" href="/assets/js/55.6f270dd6.js"><link rel="prefetch" href="/assets/js/56.ed45f328.js"><link rel="prefetch" href="/assets/js/57.f01b8ee4.js"><link rel="prefetch" href="/assets/js/58.034f4cf3.js"><link rel="prefetch" href="/assets/js/59.f567a814.js"><link rel="prefetch" href="/assets/js/6.6c659510.js"><link rel="prefetch" href="/assets/js/60.f27e8593.js"><link rel="prefetch" href="/assets/js/61.0e18e3e1.js"><link rel="prefetch" href="/assets/js/7.b7348597.js"><link rel="prefetch" href="/assets/js/8.8f481eb9.js"><link rel="prefetch" href="/assets/js/9.88b2a566.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f48fada0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/LOGO.png" alt="JSChen" class="logo"> <span class="site-name can-hide">JSChen</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术提升" class="dropdown-title"><span class="title">技术提升</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端进阶之路
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/architect/base/" class="nav-link router-link-active">
+  javaScript基础
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/network/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/vue/" class="nav-link">
+  Vue.js
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/engineering/" class="nav-link">
+  前端工程化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          运维小兴趣
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/ops/linux/" class="nav-link">
+  linux
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/nginx/" class="nav-link">
+  nginx
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/docker/" class="nav-link">
+  docker
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><span class="title">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/interview/included/" class="nav-link">
+  面试题收录
+</a></li><li class="dropdown-item"><!----> <a href="/pages/interview/plan/4-8/" class="nav-link">
+  面试准备
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/essay/" class="nav-link">
+  随笔
+</a></li><li class="dropdown-item"><!----> <a href="/pages/saying/" class="nav-link">
+  名言小课堂
+</a></li><li class="dropdown-item"><!----> <a href="/pages/about/" class="nav-link">
+  关于
+</a></li><li class="dropdown-item"><!----> <a href="/pages/pdf/" class="nav-link">
+  收藏书籍
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogroll/" class="nav-link">
+  友情链接
+</a></li><li class="dropdown-item"><!----> <a href="/pages/story/" class="nav-link">
+  故事
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/guestccc/guestccc.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术提升" class="dropdown-title"><span class="title">技术提升</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端进阶之路
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/architect/base/" class="nav-link router-link-active">
+  javaScript基础
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/network/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/vue/" class="nav-link">
+  Vue.js
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/architect/engineering/" class="nav-link">
+  前端工程化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          运维小兴趣
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/technology/ops/linux/" class="nav-link">
+  linux
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/nginx/" class="nav-link">
+  nginx
+</a></li><li class="dropdown-subitem"><a href="/pages/technology/ops/docker/" class="nav-link">
+  docker
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><span class="title">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/interview/included/" class="nav-link">
+  面试题收录
+</a></li><li class="dropdown-item"><!----> <a href="/pages/interview/plan/4-8/" class="nav-link">
+  面试准备
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/essay/" class="nav-link">
+  随笔
+</a></li><li class="dropdown-item"><!----> <a href="/pages/saying/" class="nav-link">
+  名言小课堂
+</a></li><li class="dropdown-item"><!----> <a href="/pages/about/" class="nav-link">
+  关于
+</a></li><li class="dropdown-item"><!----> <a href="/pages/pdf/" class="nav-link">
+  收藏书籍
+</a></li><li class="dropdown-item"><!----> <a href="/pages/blogroll/" class="nav-link">
+  友情链接
+</a></li><li class="dropdown-item"><!----> <a href="/pages/story/" class="nav-link">
+  故事
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/guestccc/guestccc.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>基础知识</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/technology/architect/base/" class="sidebar-link">原型链</a></li><li><a href="/pages/technology/architect/base/this.html" class="sidebar-link">this</a></li><li><a href="/pages/technology/architect/base/execution_scope.html" class="sidebar-link">从 执行上下文栈 到 作用域链 到 闭包</a></li><li><a href="/pages/technology/architect/base/new.html" class="sidebar-link">new 实现</a></li><li><a href="/pages/technology/architect/base/apply_call_bind.html" class="sidebar-link">apply call bind 模拟实现</a></li><li><a href="/pages/technology/architect/base/type.html" class="sidebar-link">类型判断</a></li><li><a href="/pages/technology/architect/base/event-loop.html" class="sidebar-link">event-loop 事件循环</a></li><li><a href="/pages/technology/architect/base/code.html" class="sidebar-link">面向对象（oop），面向过程（POP），函数式编程（fp）</a></li><li><a href="/pages/technology/architect/base/css.html" class="active sidebar-link">css 基础篇</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/technology/architect/base/css.html#bfc-块级格式化上下文" class="sidebar-link">BFC 块级格式化上下文</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/base/css.html#层叠上下文-stacking-context" class="sidebar-link">层叠上下文 stacking context</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/base/css.html#网格布局-grid-不常用" class="sidebar-link">网格布局 grid (不常用)</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/base/css.html#盒模型" class="sidebar-link">盒模型</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/base/css.html#弹性布局-flex" class="sidebar-link">弹性布局 flex</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/base/css.html#containing-block-包含块" class="sidebar-link">containing block 包含块</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/base/css.html#选择器" class="sidebar-link">选择器</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/base/css.html#清除浮动" class="sidebar-link">清除浮动</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/base/css.html#动画" class="sidebar-link">动画</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/base/css.html#bem-命名规范" class="sidebar-link">BEM 命名规范</a></li><li class="sidebar-sub-header"><a href="/pages/technology/architect/base/css.html#渐变画三角" class="sidebar-link">渐变画三角</a></li></ul></li><li><a href="/pages/technology/architect/base/html.html" class="sidebar-link">html 基础篇</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>es6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>函数式编程</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>设计模式</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="css-基础篇"><a href="#css-基础篇" class="header-anchor">#</a> css 基础篇</h1> <h2 id="bfc-块级格式化上下文"><a href="#bfc-块级格式化上下文" class="header-anchor">#</a> BFC 块级格式化上下文</h2> <p>块级格式化上下文： <code>东西</code> （指的就是这个抽象的 <code>东西</code> ）通过设置特定属性而成</p> <p><strong>变身块级格式化上下文</strong></p> <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="noopener noreferrer">MDN--格式化上下文<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="custom-block tip"><p class="custom-block-title">常用的</p> <ul><li>html</li> <li>float</li> <li>position: fixed/absolute</li> <li>display: inline-block/table-cell/table-caption ...</li> <li>overflow 值不为 visible 的块元素</li> <li><strong>display: flow-root</strong>(创建无副作用的BFC)</li> <li>contain: layout/content/paint</li> <li><strong>display: flex/inline-flex 的子元素</strong></li> <li><strong>display: grid/inline-grid 的子元素</strong></li></ul></div> <p>特点：内部元素不会影响到外部元素，</p> <h2 id="层叠上下文-stacking-context"><a href="#层叠上下文-stacking-context" class="header-anchor">#</a> 层叠上下文 stacking context</h2> <ul><li><p>层叠上下文： <code>东西</code> （指的就是这个抽象的 <code>东西</code> ）通过设置特定属性而成</p></li> <li><p>层叠水平：<code>位置</code>（指定就是 <code>所有元素</code> 包括 <code>层叠上下文</code> 这个东西的 <code>位置</code>）</p></li> <li><p>层叠顺序：<code>顺序</code>（指定就是 <code>所有元素</code> 包括 <code>层叠上下文</code> 这个东西 <code>位置</code>的顺序，也就是 <code>规则</code> ）</p></li></ul> <p><strong>变身为层叠上下文</strong></p> <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Understanding_z_index/The_stacking_context" target="_blank" rel="noopener noreferrer">MDN--层叠上下文<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><strong>层叠顺序</strong></p> <ul><li><p>高层叠低层</p></li> <li><p>同层后来居上</p></li></ul> <p><strong>七层顺序</strong></p> <ol><li><p>层叠上下文</p></li> <li><p>负z-index(这个元素本身也是一个层叠上下文，是 <code>1</code> 的子元素、子层叠上下文)</p></li> <li><p>block</p></li> <li><p>float</p></li> <li><p>inline、inline-block</p></li> <li><p>z-index:auto/0</p></li></ol> <ul><li><p>z-index:auto</p></li> <li><p>z-index:0(这个元素本身也是一个层叠上下文，是 <code>1</code> 的子元素、子层叠上下文)</p></li> <li><p>opacity/transform/mix-blend-mode/filter/isolation:isolate/will-change/flex子元素</p></li></ul> <ol start="7"><li>z-index:正(这个元素本身也是一个层叠上下文，是 <code>1</code> 的子元素、子层叠上下文)</li></ol> <h2 id="网格布局-grid-不常用"><a href="#网格布局-grid-不常用" class="header-anchor">#</a> 网格布局 grid (不常用)</h2> <p><a href="http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html" target="_blank" rel="noopener noreferrer">阮一峰--CSS Grid 网格布局教程<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="盒模型"><a href="#盒模型" class="header-anchor">#</a> 盒模型</h2> <ul><li>标准盒子模型</li> <li>怪异盒子模型（ie）</li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">margin</span><span class="token punctuation">:</span>10px<span class="token punctuation">;</span><span class="token property">border</span><span class="token punctuation">:</span>10px solid yellow<span class="token punctuation">;</span><span class="token property">padding</span><span class="token punctuation">:</span>10px<span class="token punctuation">;</span><span class="token property">width</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span><span class="token property">height</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span><span class="token property">background</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div style="width:100px;height:100px;background:red;"> 100 * 100</div> <div style="margin:10px;border:10px solid yellow;padding:10px;width:100px;height:100px;background:red;box-sizing:border-box;"></div> <p>上面这个盒子在w3c标准盒子模型和IE的怪异盒子模型（ie）下面分别的宽度</p> <div class="language-css extra-class"><pre class="language-css"><code>标准盒子模型：总宽度 = content 100px + border 10px * 2 + padding 10px * 2 + margin 10px * 2 //160px
+<span class="token property">怪异盒子模型</span><span class="token punctuation">:</span> 总宽度 = <span class="token punctuation">(</span>content 60px + border 10px * 2 + padding 10px * 2<span class="token punctuation">)</span> +  margin 10px * 2// 120px
+</code></pre></div><p>可以通过 css3 属性 <code>box-sizing</code> 来切换</p> <p>也就是说 <code>ie</code> 盒模型相当于 <code>标准盒模型</code> 设置了 <code>box-sizing: border-box;</code></p> <div class="custom-block tip"><p class="custom-block-title">box-sizing</p> <p><code>box-sizing： content-box || border-box</code></p> <p><code>border-box</code> 将使用怪异盒子模型（ie）
+当怪异盒子模型（ie）的宽度小于 <code>border+padding</code> 的宽度的时候， <code>content width</code> 将变为 <code>0</code> ，盒子的宽度会被 <code>border + padding</code> 的总宽度撑开</p></div> <h2 id="弹性布局-flex"><a href="#弹性布局-flex" class="header-anchor">#</a> 弹性布局 flex</h2> <p>传统的 block 元素，采用的是垂直方向布局，inline 元素水平方向布局，而 flex 内在没有方向限制</p> <h2 id="containing-block-包含块"><a href="#containing-block-包含块" class="header-anchor">#</a> containing block 包含块</h2> <p>子元素的百分比，比较的是父元素的 <code>containing block</code></p> <ol><li>containing block = 宽高减去padding和border = 0 0
+<div class="parent parent--e1"><div class="child"></div></div></li></ol> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>parent parent--e1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>child<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">.parent</span><span class="token punctuation">{</span>
+        <span class="token property">padding</span><span class="token punctuation">:</span>50px<span class="token punctuation">;</span>
+        <span class="token property">border</span><span class="token punctuation">:</span>50px solid green<span class="token punctuation">;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span>200px<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span>200px<span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.child</span><span class="token punctuation">{</span>
+        <span class="token property">width</span><span class="token punctuation">:</span>80%<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span>80%<span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span>yellow<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.parent--e1</span><span class="token punctuation">{</span>
+        <span class="token property">box-sizing</span><span class="token punctuation">:</span>border-box<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.parent--e2</span><span class="token punctuation">{</span>
+        <span class="token property">box-sizing</span><span class="token punctuation">:</span>content-box<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.parent--e3</span><span class="token punctuation">{</span>
+        <span class="token property">position</span><span class="token punctuation">:</span>relative<span class="token punctuation">;</span>
+        <span class="token property">box-sizing</span><span class="token punctuation">:</span>border-box<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.child--e3</span><span class="token punctuation">{</span>
+        <span class="token property">position</span><span class="token punctuation">:</span>absolute<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.parent--e4</span><span class="token punctuation">{</span>
+        <span class="token property">position</span><span class="token punctuation">:</span>relative<span class="token punctuation">;</span>
+        <span class="token property">box-sizing</span><span class="token punctuation">:</span>content-box<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ol start="2"><li>containing block = 宽高 = 200 200</li></ol> <div class="parent parent--e2"><div class="child"></div></div> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>parent parent--e2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>child<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ol start="3"><li>containing block = padding area = 宽高减去border = 100 100（特殊情况）</li></ol> <div class="parent parent--e3"><div class="child child--e3"></div></div> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>parent parent--e3<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>child child--e3<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ol start="4"><li>containing block = padding area = 宽高加padding = 250 250（特殊情况）</li></ol> <div class="parent parent--e4"><div class="child child--e3"></div></div> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>parent parent--e4<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>child child--e3<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="选择器"><a href="#选择器" class="header-anchor">#</a> 选择器</h2> <ul><li>id选择器</li> <li>标签选择器</li> <li>class选择器</li> <li>相邻选择器</li> <li>子选择器</li> <li>后代选择器</li> <li>通配符选择器</li> <li>属性选择器</li> <li>伪类选择器</li></ul> <h2 id="清除浮动"><a href="#清除浮动" class="header-anchor">#</a> 清除浮动</h2> <ol><li><p>最后一个元素设置 <code>display:block;clear:both</code></p></li> <li><p>设置父元素为 <code>BFC</code></p></li></ol> <h2 id="动画"><a href="#动画" class="header-anchor">#</a> 动画</h2> <h2 id="bem-命名规范"><a href="#bem-命名规范" class="header-anchor">#</a> BEM 命名规范</h2> <p>Bem 是块（block）、元素（element）、修饰符（modifier）的简写，由 Yandex 团队提出的一种前端 CSS 命名方法论。</p> <h2 id="渐变画三角"><a href="#渐变画三角" class="header-anchor">#</a> 渐变画三角</h2> <div id="grad1"></div> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+<span class="token selector">#grad1</span> <span class="token punctuation">{</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+	<span class="token property">width</span><span class="token punctuation">:</span>50px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span> <span class="token comment">/* 不支持线性的时候显示 */</span>
+    <span class="token property">background</span><span class="token punctuation">:</span>
+        <span class="token function">linear-gradient</span><span class="token punctuation">(</span>135deg<span class="token punctuation">,</span> transparent 17px<span class="token punctuation">,</span> pink 0<span class="token punctuation">)</span> left top<span class="token punctuation">,</span>
+        <span class="token function">linear-gradient</span><span class="token punctuation">(</span>-135deg<span class="token punctuation">,</span> transparent 17px<span class="token punctuation">,</span> pink 0<span class="token punctuation">)</span> right top<span class="token punctuation">,</span>
+        <span class="token function">linear-gradient</span><span class="token punctuation">(</span>-45deg<span class="token punctuation">,</span> transparent 17px<span class="token punctuation">,</span> pink 0<span class="token punctuation">)</span> right bottom<span class="token punctuation">,</span>
+        <span class="token function">linear-gradient</span><span class="token punctuation">(</span>45deg<span class="token punctuation">,</span> transparent 17px<span class="token punctuation">,</span> pink 0<span class="token punctuation">)</span> left bottom<span class="token punctuation">;</span>
+    <span class="token property">background-size</span><span class="token punctuation">:</span> 50% 50%<span class="token punctuation">;</span>
+    <span class="token property">background-repeat</span><span class="token punctuation">:</span> no-repeat<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>grad1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="parent1"><div class="child1"></div></div> <style>
+.parent1 {
+    width:100px;
+    height:100px;
+    position: relative; 
+    background:yellow;
+}
+.child1 {
+    width: 50px;
+    height: 10px;
+    position: absolute;
+    background:red;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+</style></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2020/5/30 下午2:06:25</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/pages/technology/architect/base/code.html" class="prev">
+        面向对象（oop），面向过程（POP），函数式编程（fp）
+      </a></span> <span class="next"><a href="/pages/technology/architect/base/html.html">
+        html 基础篇
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.c2508881.js" defer></script><script src="/assets/js/2.cf1aef41.js" defer></script><script src="/assets/js/4.c3f9504b.js" defer></script>
+  </body>
+</html>
